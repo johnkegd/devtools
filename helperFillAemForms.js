@@ -80,47 +80,36 @@ var setFormProperties = function (somList, propertiesNames, valueList) {
 
 
 class HelperComponentsCheckService {
+    type = {
+        CHECKBOX: "checkbox",
+        TEXTBOX: "textbox",
+        EMAIL: "email",
+        NUMERICBOX: "numericbox",
+        DROPDOWNLIST: "dropdownlist",
+        RADIOBUTTON: "radiobutton",
+        DATEPICKER: "datepicker",
+    };
+    CHECKINPUT = HelperVariableCheckService;
     constructor() {}
     /* TODO
     * slice complex function
     **/
-    static checkFormComponentsType() {
+    static initFillForm() {
         var help = new HelperComponentsCheckService();
-        var checkInput = HelperVariableCheckService;
-        var map = new Map();
         var somList = this.getSomList();
         var valuesList = [];
-        var guideResultObject = help.helperGetElementsProperty("options", somList);
-        var types = {
-            checkbox: "checkbox",
-            textbox: "textbox",
-            email: "email",
-            numberbox: "numberbox",
-            dropdownlist: "dropdownlist",
-            radiobutton: "radiobutton",
-            datepicker: "datepicker",
-        };
-        if (checkInput.isNotNull(guideResultObject.data[0])) {
-            for(var i=0; i < guideResultObject.data.length; i++) {
-                var jsonModel = guideResultObject.data[i].jsonModel;
-                if (!checkInput.isUndefined(jsonModel.options)) {
-                    map.set(somList[i],jsonModel.options[0]);
-                    valuesList.push(jsonModel.options[0]);
-                } else if (!checkInput.isUndefined(jsonModel.displayPictureClause)) {
-                    var validationPattern = jsonModel.displayPictureClause;
-                    validationPattern = validationPattern.substring(validationPattern.lastIndexOf("{") + 1, validationPattern.lastIndexOf("}"));
-                    map.set(somList[i], validationPattern);
-                    valuesList.push(validationPattern);
-                } else if (!checkInput.isUndefined(jsonModel.yearRangeFrom) && checkInput.isNotNull(jsonModel["{default}"])) {
-                    var dateDefaultPattern = jsonModel["{default}"].replace("dd","18").replace("mm", "02").replace("yyy", new Date().getFullYear().toString());
-                    map.set(somList[i], dateDefaultPattern);
-                    valuesList.push(dateDefaultPattern);
-                } else {
-                    valuesList.push("Johnkegd" + i);
+        try {
+            var guideResultObject = help.helperGetElementsProperty("options", somList);
+            if (help.CHECKINPUT.isNotNull(guideResultObject.data) && !help.CHECKINPUT.isUndefined(guideResultObject.data)) {
+                for(var i=0; i < guideResultObject.data.length; i++) {
+                    var componentData = guideResultObject.data[i].jsonModel;
+                    valuesList.push(help.helperSetComponentValue(componentData));
                 }
+            } else {
+                throw Error("Error while initFillForm");
             }
-        } else {
-            throw Error("checkFormComponentsType: NullPointer Error");
+        } catch (error) {
+            console.error(error);
         }
         help.helperSetElementsProperty("value", somList, valuesList);
     }
@@ -136,6 +125,76 @@ class HelperComponentsCheckService {
             });
         }
         return somList;
+    }
+
+    helperSetComponentValue(componentData) {
+        try {
+            var componentType = componentData["sling:resourceType"].substring(componentData["sling:resourceType"].lastIndexOf("/") + 1);
+            switch(componentType) {
+                case this.type.CHECKBOX : 
+                    if(!this.CHECKINPUT.isUndefined(componentData.options)) {
+                        return componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
+                    }
+                break;
+                case this.type.TEXTBOX : 
+                    if(componentData.shortDescription.search("41") != -1 || componentData.shortDescription.search("000") != -1) {
+                        return "+41 00 000 00 00";
+                    } else {
+                        return "text example";
+                    }
+                    /* TODO
+                    * check displayPictureClause to set textbox
+                     */
+                break;
+                case this.type.NUMERICBOX : 
+                    var value = null;
+                    //if(this.CHECKINPUT.isNotNull(componentData.displayPictureClause)){}
+                    return "123456";
+                break;
+                case  this.type.EMAIL : 
+                    return "example@mail.com";
+                break;
+                case this.type.DROPDOWNLIST : 
+                    return componentData.options[0];
+                break;
+                case this.type.DATEPICKER :
+                    var datePattern;
+                    var value;
+                    if(!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
+                        if(componentData.validatePictureClause.search("date") === 0) {
+                            datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length -1);
+                            datePattern = (datePattern.search("YYYY") === 0) ? datePattern.replace("YYYY","2021") : datePattern.replace("YY",21);
+                            datePattern = (datePattern.search("MM") === 0) ? datePattern.replace("MM","02") : datePattern.replace("M","2");
+                            datePattern = (datePattern.search("DD") === 0) ? datePattern.replace("DD","18") : datePattern.replace("D","2");
+                            value = datePattern.replaceAll("-",".");
+                            return value;                            
+                        }
+                    } 
+                break;
+                case this.type.RADIOBUTTON :
+                    var value = null;
+                    if(!this.CHECKINPUT.isUndefined(componentData.valueCommitScript)) {
+                       componentData.options.forEach(function(option){
+                           option = option.substring(0, option.lastIndexOf("="));
+                            if(option != "true" && option != "yes" && option != "accept") {
+                                value = option;
+                                return;
+                            } 
+                       });
+                       if (this.CHECKINPUT.isNull(options)) {
+                        value = componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
+                       }
+                       return value;
+                    }
+                break;
+                default :
+                    console.log("unkow component type: ", componentType);
+                break;
+            }
+            
+        } catch (error) {
+            console.error("Error while helperCheckComponentsType: ", error);
+        }
     }
 
     helperGetGuideBridge() {
@@ -162,8 +221,7 @@ class HelperComponentsCheckService {
     }
 
     helperSetElementsProperty(propertyName, somExpressions, valuesList) {
-        var checkInputs = HelperVariableCheckService;
-        if (checkInputs.isArray(somExpressions) && checkInputs.isString(propertyName)) {
+        if (this.CHECKINPUT.isArray(somExpressions) && this.CHECKINPUT.isString(propertyName)) {
             this.helperGetGuideBridge().setProperty(somExpressions, propertyName, valuesList);
            // this.helperCheckUpdates(propertyName, somExpressions, value);
         } else {
@@ -173,17 +231,16 @@ class HelperComponentsCheckService {
 
     helperCheckUpdates(propertyName, somExpressions, value) {
         var guideResultObject;
-        var checkInputs = HelperVariableCheckService;
         /* TODO
          *  option to check updates from instance fields guideResultObject
          */
         try {
             guideResultObject = this.helperGetElementsProperty(propertyName, somExpressions);
-            if (checkInputs.isNotNull(guideResultObject.data[0]) && checkInputs.isUndefined(guideResultObject.data[0]) != true) {
-                if (checkInputs.isString(guideResultObject.data[0])) {
+            if (this.CHECKINPUT.isNotNull(guideResultObject.data[0]) && this.CHECKINPUT.isUndefined(guideResultObject.data[0]) != true) {
+                if (this.CHECKINPUT.isString(guideResultObject.data[0])) {
                     return value.toLocaleLowerCase() === guideResultObject.data[0].toLocaleLowerCase();
                 } else {
-                    if (checkInputs.isObject(guideResultObject.data[0].jsonModel)) {
+                    if (this.CHECKINPUT.isObject(guideResultObject.data[0].jsonModel)) {
                         var jsonModel = guideResultObject.data[0].jsonModel;
                         for (var [k, v] of Object.entries(jsonModel)) {
                             if (v.toLocaleLowerCase() === value) {
