@@ -21,7 +21,6 @@ class HelperComponentsCheckService {
         DATEPICKER: "datepicker",
     };
     CHECKINPUT = HelperVariableCheckService;
-
     constructor() {}
 
     static getSomList() {
@@ -45,15 +44,6 @@ class HelperComponentsCheckService {
         } else {
             console.log("initFillForm: valuesList is empty");
             return null;
-        }
-
-        // retrying to catch components inactive components
-        somList = HelperComponentsCheckService.getSomList();
-        if(somList.length != 0) {
-            valuesResult = this.getValues(somList);
-            if(valuesResult[0] != 0) {
-                this.helperSetElementsProperty("value", somList, valuesResult);
-            }
         }
     }
 
@@ -104,8 +94,10 @@ class HelperComponentsCheckService {
                     return "example@mail.com";
                     break;
                 case this.type.DROPDOWNLIST:
-                    var value = this.helperCheckComponentOptions(componentData.options, "=");
-                    return value;
+                    if(!this.CHECKINPUT.isUndefined(componentData.options)) {
+                        var value = this.helperCheckComponentOptions(componentData.options, "=");
+                        return value;
+                    }
                     break;
                 case this.type.DATEPICKER:
                     var datePattern;
@@ -209,12 +201,13 @@ class HelperComponentsCheckService {
     }
 
     helperCheckComponentOptions(componentOptions, separator) {
-        var option = (componentOptions[0].search(separator) != -1) ? componentOptions[0].split(separator)[0] : componentOptions[0];
+        var option = null;
+        if(this.CHECKINPUT.isArray(componentOptions)) {
+            option = (componentOptions[0].search(separator) != -1) ? componentOptions[0].split(separator)[0] : componentOptions[0];
+        } else if(this.CHECKINPUT.isString(componentOptions)) {
+            option = componentOptions.split(separator)[0];
+        }
         return option;
-    }
-
-    helperRetry(rounds) {
-
     }
 };
 
@@ -330,4 +323,5 @@ var helperObjectIterator = function (item) {
 (function () {
     var initiator = new HelperComponentsCheckService();
     initiator.initFillForm();
+    setTimeout(initiator.initFillForm(),25);
 })();
