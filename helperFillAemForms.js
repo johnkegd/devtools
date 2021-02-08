@@ -1,24 +1,3 @@
-var fillDataKeys = function (fieldsKeysCollection) {
-    fieldsKeysCollection = guideBridge.validate(fieldsKeysCollection);
-    if (fieldsKey.length != -1) {
-        fieldsKey.forEach(function (item) {
-
-        });
-    }
-}
-
-var init = function (item) {
-    guideBridge.getGuideState({
-        sucess: function (guideResultObj) {
-            item = guideResultObj;
-            handleData();
-        },
-        error: function (error) {
-            console.log("error while get guideData", error);
-        }
-    });
-}
-
 var setNewGuideData = function () {
     guideBridge.setData({
         guideState: jsonData,
@@ -31,54 +10,6 @@ var setNewGuideData = function () {
     });
 }
 
-var handleData = function () {
-    try {
-        var panelItems = jsonData.guideState.guideDom.rootPanel.items;
-
-
-    } catch (error) {
-        console.error("error while reading jsonData results: ", error);
-    }
-}
-
-/* var getSomList = function (validatedData) {
-    var somList = [];
-    try {
-        HelperVariableCheckService.isNotNull(validatedData);
-        validatedData.forEach(function (item) {
-            somList.push(item.som);
-        });
-    } catch (error) {
-        console.error("Error while getSomList: ", error);
-    }
-    return somList;
-}
- */
-
-var setPropertiesNames = function (somList, propName) {
-    var result = guideBridge.getElementProperty({
-        propertyName: propName,
-        somExpression: somList
-    });
-    if (result.errors) {
-        var error = result.getNextMessage();
-        while (error != null) {
-            console.log("Errors trying getElementProperty", error.message);
-        }
-    }
-
-    return propertiesNames;
-}
-
-var setValuesList = function () {
-
-}
-
-var setFormProperties = function (somList, propertiesNames, valueList) {
-
-}
-
-
 class HelperComponentsCheckService {
     type = {
         CHECKBOX: "checkbox",
@@ -90,29 +21,8 @@ class HelperComponentsCheckService {
         DATEPICKER: "datepicker",
     };
     CHECKINPUT = HelperVariableCheckService;
+
     constructor() {}
-    /* TODO
-    * slice complex function
-    **/
-    static initFillForm() {
-        var help = new HelperComponentsCheckService();
-        var somList = this.getSomList();
-        var valuesList = [];
-        try {
-            var guideResultObject = help.helperGetElementsProperty("options", somList);
-            if (help.CHECKINPUT.isNotNull(guideResultObject.data) && !help.CHECKINPUT.isUndefined(guideResultObject.data)) {
-                for(var i=0; i < guideResultObject.data.length; i++) {
-                    var componentData = guideResultObject.data[i].jsonModel;
-                    valuesList.push(help.helperSetComponentValue(componentData));
-                }
-            } else {
-                throw Error("Error while initFillForm");
-            }
-        } catch (error) {
-            console.error(error);
-        }
-        help.helperSetElementsProperty("value", somList, valuesList);
-    }
 
     static getSomList() {
         var help = new HelperComponentsCheckService();
@@ -127,73 +37,113 @@ class HelperComponentsCheckService {
         return somList;
     }
 
-    helperSetComponentValue(componentData) {
+    initFillForm() {
+        var somList = HelperComponentsCheckService.getSomList();
+        var valuesResult = this.getValues(somList);
+        if(this.CHECKINPUT.isNotNull(valuesResult[0]) && !this.CHECKINPUT.isUndefined(valuesResult[0])) {
+            this.helperSetElementsProperty("value", somList, valuesResult);
+        } else {
+            console.log("initFillForm: valuesList is empty");
+            return null;
+        }
+
+        // retrying to catch components inactive components
+        somList = HelperComponentsCheckService.getSomList();
+        if(somList.length != 0) {
+            valuesResult = this.getValues(somList);
+            if(valuesResult[0] != 0) {
+                this.helperSetElementsProperty("value", somList, valuesResult);
+            }
+        }
+    }
+
+    getValues(somList) {
+        var valuesResult = [];
+        try {
+            var guideResultObject = this.helperGetElementsProperty("options", somList);
+            if (this.CHECKINPUT.isNotNull(guideResultObject.data) && !this.CHECKINPUT.isUndefined(guideResultObject.data)) {
+                for (var i = 0; i < guideResultObject.data.length; i++) {
+                    var componentData = guideResultObject.data[i].jsonModel;
+                    valuesResult.push(this.getElementValue(componentData));
+                }
+            } else {
+                throw Error("Error while helperGetValues");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+        return valuesResult;
+    }
+
+    getElementValue(componentData) {
         try {
             var componentType = componentData["sling:resourceType"].substring(componentData["sling:resourceType"].lastIndexOf("/") + 1);
-            switch(componentType) {
-                case this.type.CHECKBOX : 
-                    if(!this.CHECKINPUT.isUndefined(componentData.options)) {
+            switch (componentType) {
+                case this.type.CHECKBOX:
+                    if (!this.CHECKINPUT.isUndefined(componentData.options)) {
                         return componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
                     }
-                break;
-                case this.type.TEXTBOX : 
-                    if(componentData.shortDescription.search("41") != -1 || componentData.shortDescription.search("000") != -1) {
-                        return "+41 00 000 00 00";
-                    } else {
-                        return "text example";
+                    break;
+                case this.type.TEXTBOX:
+                    if (!this.CHECKINPUT.isUndefined(componentData.displayPictureClause)) {
+                        var valuePattern = componentData.displayPictureClause;
+                        return valuePattern.substring(valuePattern.lastIndexOf("{") + 1, valuePattern.length - 1);
+                    } else if (!this.CHECKINPUT.isUndefined(componentData.shortDescription)) {
+                        if (componentData.shortDescription.search("41") != -1 || componentData.shortDescription.search("000") != -1) {
+                            return "+41 00 000 00 00";
+                        }
                     }
-                    /* TODO
-                    * check displayPictureClause to set textbox
-                     */
-                break;
-                case this.type.NUMERICBOX : 
+                    return "text example";
+                    break;
+                case this.type.NUMERICBOX:
                     var value = null;
                     //if(this.CHECKINPUT.isNotNull(componentData.displayPictureClause)){}
                     return "123456";
-                break;
-                case  this.type.EMAIL : 
+                    break;
+                case this.type.EMAIL:
                     return "example@mail.com";
-                break;
-                case this.type.DROPDOWNLIST : 
-                    return componentData.options[0];
-                break;
-                case this.type.DATEPICKER :
+                    break;
+                case this.type.DROPDOWNLIST:
+                    var value = this.helperCheckComponentOptions(componentData.options, "=");
+                    return value;
+                    break;
+                case this.type.DATEPICKER:
                     var datePattern;
                     var value;
-                    if(!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
-                        if(componentData.validatePictureClause.search("date") === 0) {
-                            datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length -1);
-                            datePattern = (datePattern.search("YYYY") === 0) ? datePattern.replace("YYYY","2021") : datePattern.replace("YY",21);
-                            datePattern = (datePattern.search("MM") === 0) ? datePattern.replace("MM","02") : datePattern.replace("M","2");
-                            datePattern = (datePattern.search("DD") === 0) ? datePattern.replace("DD","18") : datePattern.replace("D","2");
-                            value = datePattern.replaceAll("-",".");
-                            return value;                            
+                    if (!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
+                        if (componentData.validatePictureClause.search("date") === 0) {
+                            datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length - 1);
+                            datePattern = (datePattern.search("YYYY") != -1) ? datePattern.replace("YYYY", "2021") : datePattern.replace("YY", 21);
+                            datePattern = (datePattern.search("MM") != -1) ? datePattern.replace("MM", "02") : datePattern.replace("M", "2");
+                            datePattern = (datePattern.search("DD") != -1) ? datePattern.replace("DD", "18") : datePattern.replace("D", "2");
+                            value = datePattern.replaceAll("-", ".");
+                            return value;
                         }
-                    } 
-                break;
-                case this.type.RADIOBUTTON :
-                    var value = null;
-                    if(!this.CHECKINPUT.isUndefined(componentData.valueCommitScript)) {
-                       componentData.options.forEach(function(option){
-                           option = option.substring(0, option.lastIndexOf("="));
-                            if(option != "true" && option != "yes" && option != "accept") {
-                                value = option;
-                                return;
-                            } 
-                       });
-                       if (this.CHECKINPUT.isNull(options)) {
-                        value = componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
-                       }
-                       return value;
                     }
-                break;
-                default :
+                    break;
+                case this.type.RADIOBUTTON:
+                    var value = null;
+                    if (!this.CHECKINPUT.isUndefined(componentData.valueCommitScript)) {
+                        componentData.options.forEach(function (option) {
+                            option = option.substring(0, option.lastIndexOf("="));
+                            if (option != "true" && option != "yes" && option != "accept") {
+                                value = option;
+                                return value;
+                            }
+                        });
+                        if (this.CHECKINPUT.isNull(value)) {
+                            value = componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
+                        }
+                        return value;
+                    }
+                    break;
+                default:
                     console.log("unkow component type: ", componentType);
-                break;
+                    break;
             }
-            
+
         } catch (error) {
-            console.error("Error while helperCheckComponentsType: ", error);
+            console.error("Error while getElementValue: ", error);
         }
     }
 
@@ -223,7 +173,7 @@ class HelperComponentsCheckService {
     helperSetElementsProperty(propertyName, somExpressions, valuesList) {
         if (this.CHECKINPUT.isArray(somExpressions) && this.CHECKINPUT.isString(propertyName)) {
             this.helperGetGuideBridge().setProperty(somExpressions, propertyName, valuesList);
-           // this.helperCheckUpdates(propertyName, somExpressions, value);
+            // this.helperCheckUpdates(propertyName, somExpressions, value);
         } else {
             console.error("helperSetElementsProperty is expecting propertyName as String and SomExpressions as Array", propertyName, somExpressions);
         }
@@ -257,7 +207,16 @@ class HelperComponentsCheckService {
             console.error("Error while helperCheckUpdates: ", error);
         }
     }
-}
+
+    helperCheckComponentOptions(componentOptions, separator) {
+        var option = (componentOptions[0].search(separator) != -1) ? componentOptions[0].split(separator)[0] : componentOptions[0];
+        return option;
+    }
+
+    helperRetry(rounds) {
+
+    }
+};
 
 class HelperVariableCheckService {
     constructor() {}
@@ -306,7 +265,7 @@ class HelperVariableCheckService {
                 getType(args);
             }
         } catch (warn) {
-            console.warn("Warning while variableCheck: ", warn, " DATA TYPE: ", type);
+            // console.warn("Warning while variableCheck: ", warn, " DATA TYPE: ", type);
         }
         return type;
     }
@@ -341,7 +300,7 @@ class HelperVariableCheckService {
     static isBoolean() {
         return (this.checkType(item)) ? true : false;
     }
-}
+};
 /**
  *
  *
@@ -351,7 +310,7 @@ class HelperVariableCheckService {
  */
 var helperObjectIterator = function (item) {
     try {
-        HelperVariableCheckService.checkedType(item);
+        // HelperVariableCheckService.checkedType(item);
         iterateObj();
 
         function iterateObj() {
@@ -365,16 +324,10 @@ var helperObjectIterator = function (item) {
     } catch (error) {
         console.warn("Error while iterateObj: ", error);
     }
-}
+};
 
 
-// (function(){
-//     if(guideBridge != null & guideBridge != undefined) {
-
-//         var fieldsKeysCollection = [];
-//         var jsonData;
-//         var newData;
-
-//     }
-
-//    })();
+(function () {
+    var initiator = new HelperComponentsCheckService();
+    initiator.initFillForm();
+})();
