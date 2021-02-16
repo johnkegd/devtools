@@ -101,9 +101,26 @@ class HelperComponentsCheckService {
                     break;
                 case this.type.DATEPICKER:
                     var datePattern;
-                    var value;
+                    var regexDatesPattern = /(^([dD]+.[mM]+|[yY]+)|([yY]+.|[mM]+.[dD]+)|([dD]+.[mM]+.[yY]+))/gm;
+                    var regexOther = /(^([dD]+.[mM]+|[yY]+)|([yY]+.|[mM]+.[dD]+)|([dD]+.[mM]+|[yY]))/gm;
+                    var value = "";
                     if (!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
-                        if (componentData.validatePictureClause.search("date") === 0) {
+                        if (componentData.validatePictureClauseMessage.search("DD") && componentData.validatePictureClauseMessage.search("YYYY") != 0) {
+                            datePattern = componentData.validatePictureClauseMessage;
+                            datePattern = datePattern.replaceAll(/[^0-9&.]/g,"");
+                            datePattern = datePattern.split(".");
+                            if (datePattern.length > 4) {
+                                datePattern.forEach(function(i) {
+                                    if(i !== ".") {
+                                        value += i + ".";
+                                    }
+                                });
+                            } else {
+
+                            }
+
+
+
                             datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length - 1);
                             datePattern = (datePattern.search("YYYY") != -1) ? datePattern.replace("YYYY", "2021") : datePattern.replace("YY", 21);
                             datePattern = (datePattern.search("MM") != -1) ? datePattern.replace("MM", "02") : datePattern.replace("M", "2");
