@@ -1,14 +1,38 @@
-var setNewGuideData = function () {
-    guideBridge.setData({
-        guideState: jsonData,
-        sucess: function (data) {
-            console.log("new data sucess: ", data);
-        },
-        error: function (error) {
-            console.error("error while setting new data: ", error);
-        }
-    });
-}
+// var setNewGuideData = function () {
+//     guideBridge.setData({
+//         guideState: jsonData,
+//         sucess: function (data) {
+//             console.log("new data sucess: ", data);
+//         },
+//         error: function (error) {
+//             console.error("error while setting new data: ", error);
+//         }
+//     });
+// }
+
+
+// var getReducedData = 
+// guideBridge.getGuideState({
+//      success : function (guideResultObj) {
+//          jsonData = guideResultObj.data;
+//          console.log(JSON.stringify(jsonData,null,2));
+//      },
+//      error : function (guideResultObj) {
+//          // log error
+//      },
+//      reducedJSON: true
+// });
+
+// var getGuideStatus = guideBridge.getGuideState({
+//      success : function (guideResultObj) {
+//          jsonData = guideResultObj.data;
+//          console.log(JSON.stringify(jsonData,null,2));
+//      },
+//      error : function (guideResultObj) {
+//         // log error
+//      },
+//      reducedJSON: true
+// });
 
 class HelperComponentsCheckService {
     type = {
@@ -19,6 +43,7 @@ class HelperComponentsCheckService {
         DROPDOWNLIST: "dropdownlist",
         RADIOBUTTON: "radiobutton",
         DATEPICKER: "datepicker",
+        FILEUPLOAD: "fileupload",
     };
     CHECKINPUT = HelperVariableCheckService;
     constructor() {}
@@ -87,11 +112,11 @@ class HelperComponentsCheckService {
                     break;
                 case this.type.NUMERICBOX:
                     var value = null;
-                    //if(this.CHECKINPUT.isNotNull(componentData.displayPictureClause)){}
+                        //if(this.CHECKINPUT.isNotNull(componentData.displayPictureClause)){}
                     return "123456";
                     break;
                 case this.type.EMAIL:
-                    return "example@mail.com";
+                    return "johnkegd@mail.com";
                     break;
                 case this.type.DROPDOWNLIST:
                     if(!this.CHECKINPUT.isUndefined(componentData.options)) {
@@ -101,34 +126,18 @@ class HelperComponentsCheckService {
                     break;
                 case this.type.DATEPICKER:
                     var datePattern;
-                    var regexDatesPattern = /(^([dD]+.[mM]+|[yY]+)|([yY]+.|[mM]+.[dD]+)|([dD]+.[mM]+.[yY]+))/gm;
-                    var regexOther = /(^([dD]+.[mM]+|[yY]+)|([yY]+.|[mM]+.[dD]+)|([dD]+.[mM]+|[yY]))/gm;
-                    var value = "";
-                    if (!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
-                        if (componentData.validatePictureClauseMessage.search("DD") && componentData.validatePictureClauseMessage.search("YYYY") != 0) {
-                            datePattern = componentData.validatePictureClauseMessage;
-                            datePattern = datePattern.replaceAll(/[^0-9&.]/g,"");
-                            datePattern = datePattern.split(".");
-                            if (datePattern.length > 4) {
-                                datePattern.forEach(function(i) {
-                                    if(i !== ".") {
-                                        value += i + ".";
-                                    }
-                                });
-                            } else {
-
-                            }
-
-
-
-                            datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length - 1);
-                            datePattern = (datePattern.search("YYYY") != -1) ? datePattern.replace("YYYY", "2021") : datePattern.replace("YY", 21);
-                            datePattern = (datePattern.search("MM") != -1) ? datePattern.replace("MM", "02") : datePattern.replace("M", "2");
-                            datePattern = (datePattern.search("DD") != -1) ? datePattern.replace("DD", "18") : datePattern.replace("D", "2");
-                            value = datePattern.replaceAll("-", ".");
-                            return value;
-                        }
-                    }
+                    var value;
+                    var dateReplace = new Date().toISOString();
+//                     if (!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
+//                         if (componentData.validatePictureClause.search("date") === 0) {
+//                             datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length - 1);
+//                             datePattern = (datePattern.search("YYYY") != -1) ? datePattern.replace("YYYY", "2021") : datePattern.replace("YY", 21);
+//                             datePattern = (datePattern.search("MM") != -1) ? datePattern.replace("MM", "02") : datePattern.replace("M", "2");
+//                             datePattern = (datePattern.search("DD") != -1) ? datePattern.replace("DD", "18") : datePattern.replace("D", "2");
+//                             value = datePattern.replaceAll("-", "."); 
+//                         }
+//                     }
+                       return dateReplace.slice(0,dateReplace.lastIndexOf("T"));
                     break;
                 case this.type.RADIOBUTTON:
                     var value = null;
@@ -139,15 +148,18 @@ class HelperComponentsCheckService {
                                 value = option;
                                 return value;
                             }
-                        });
-                        if (this.CHECKINPUT.isNull(value)) {
+                        });  
+                    }
+                     if (this.CHECKINPUT.isNull(value)) {
                             value = componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
                         }
-                        return value;
-                    }
+                           return value;
                     break;
+                case this.type.FILEUPLOAD:
+                    return JSON.stringify([{"name":"Template.pdf","uuid_upload":"176f5ecd-e730-484d-8cbc-a65411d7f848","uuid":"e337026b-2aeb-4b34-a7af-32d6a35523be","category":"","categoryName":"","comment":""}]);
+                break;
                 default:
-                    console.log("unkow component type: ", componentType);
+                    console.log("unknown component type: ", componentType);
                     break;
             }
 
@@ -225,6 +237,11 @@ class HelperComponentsCheckService {
             option = componentOptions.split(separator)[0];
         }
         return option;
+    }
+
+    helperRetry() {
+       this.rounds--;
+       clearTimeout(this.rounds);
     }
 };
 
@@ -340,5 +357,5 @@ var helperObjectIterator = function (item) {
 (function () {
     var initiator = new HelperComponentsCheckService();
     initiator.initFillForm();
-    setTimeout(initiator.initFillForm(),25);
+    setTimeout(initiator.initFillForm(),2000);
 })();
