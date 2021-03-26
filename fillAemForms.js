@@ -44,9 +44,17 @@ class HelperComponentsCheckService {
         RADIOBUTTON: "radiobutton",
         DATEPICKER: "datepicker",
         FILEUPLOAD: "fileupload",
+        TELEPHONE: "telephone",
     };
     CHECKINPUT = HelperVariableCheckService;
-    constructor() {}
+    counter = 0;
+    constructor() {
+        guideBridge.on("elementValidationStatusChanged",
+            HelperVariableCheckService.validatioStatusCheck(event, payload, this.counter));
+
+
+       // HelperVariableCheckService.getHiddenComponents(this);
+    }
 
     static getSomList() {
         var help = new HelperComponentsCheckService();
@@ -64,7 +72,7 @@ class HelperComponentsCheckService {
     initFillForm() {
         var somList = HelperComponentsCheckService.getSomList();
         var valuesResult = this.getValues(somList);
-        if(this.CHECKINPUT.isNotNull(valuesResult[0]) && !this.CHECKINPUT.isUndefined(valuesResult[0])) {
+        if (this.CHECKINPUT.isNotNull(valuesResult[0]) && !this.CHECKINPUT.isUndefined(valuesResult[0])) {
             this.helperSetElementsProperty("value", somList, valuesResult);
         } else {
             console.log("initFillForm: valuesList is empty");
@@ -108,18 +116,18 @@ class HelperComponentsCheckService {
                             return "+41 00 000 00 00";
                         }
                     }
-                    return "text example";
+                    return "Text example";
                     break;
                 case this.type.NUMERICBOX:
                     var value = null;
-                        //if(this.CHECKINPUT.isNotNull(componentData.displayPictureClause)){}
-                    return "123456";
+                    //if(this.CHECKINPUT.isNotNull(componentData.displayPictureClause)){}
+                    return "5645";
                     break;
                 case this.type.EMAIL:
-                    return "johnkegd@mail.com";
+                    return "john@mail.com";
                     break;
                 case this.type.DROPDOWNLIST:
-                    if(!this.CHECKINPUT.isUndefined(componentData.options)) {
+                    if (!this.CHECKINPUT.isUndefined(componentData.options)) {
                         var value = this.helperCheckComponentOptions(componentData.options, "=");
                         return value;
                     }
@@ -128,36 +136,38 @@ class HelperComponentsCheckService {
                     var datePattern;
                     var value;
                     var dateReplace = new Date().toISOString();
-//                     if (!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
-//                         if (componentData.validatePictureClause.search("date") === 0) {
-//                             datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length - 1);
-//                             datePattern = (datePattern.search("YYYY") != -1) ? datePattern.replace("YYYY", "2021") : datePattern.replace("YY", 21);
-//                             datePattern = (datePattern.search("MM") != -1) ? datePattern.replace("MM", "02") : datePattern.replace("M", "2");
-//                             datePattern = (datePattern.search("DD") != -1) ? datePattern.replace("DD", "18") : datePattern.replace("D", "2");
-//                             value = datePattern.replaceAll("-", "."); 
-//                         }
-//                     }
-                       return dateReplace.slice(0,dateReplace.lastIndexOf("T"));
+                    //                     if (!this.CHECKINPUT.isUndefined(componentData.validatePictureClause) && this.CHECKINPUT.isNotNull(componentData.validatePictureClause)) {
+                    //                         if (componentData.validatePictureClause.search("date") === 0) {
+                    //                             datePattern = componentData.validatePictureClause.substring(componentData.validatePictureClause.lastIndexOf("{") + 1, componentData.validatePictureClause.length - 1);
+                    //                             datePattern = (datePattern.search("YYYY") != -1) ? datePattern.replace("YYYY", "2021") : datePattern.replace("YY", 21);
+                    //                             datePattern = (datePattern.search("MM") != -1) ? datePattern.replace("MM", "02") : datePattern.replace("M", "2");
+                    //                             datePattern = (datePattern.search("DD") != -1) ? datePattern.replace("DD", "18") : datePattern.replace("D", "2");
+                    //                             value = datePattern.replaceAll("-", "."); 
+                    //                         }
+                    //                     }
+                    return dateReplace.slice(0, dateReplace.lastIndexOf("T"));
                     break;
                 case this.type.RADIOBUTTON:
                     var value = null;
                     if (!this.CHECKINPUT.isUndefined(componentData.valueCommitScript)) {
                         componentData.options.forEach(function (option) {
                             option = option.substring(0, option.lastIndexOf("="));
-                            if (option != "true" && option != "yes" && option != "accept") {
+                            if (option === "true" && option === "yes" && option === "accept") {
                                 value = option;
                                 return value;
                             }
-                        });  
+                        });
                     }
-                     if (this.CHECKINPUT.isNull(value)) {
-                            value = componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
-                        }
-                           return value;
+                    if (this.CHECKINPUT.isNull(value)) {
+                        value = componentData.options[0].substring(0, componentData.options[0].lastIndexOf("="));
+                    }
+                    return value;
                     break;
                 case this.type.FILEUPLOAD:
-                    return JSON.stringify([{"name":"Template.pdf","uuid_upload":"176f5ecd-e730-484d-8cbc-a65411d7f848","uuid":"e337026b-2aeb-4b34-a7af-32d6a35523be","category":"","categoryName":"","comment":""}]);
-                break;
+                    return JSON.stringify([{ "name": "Template.pdf", "uuid_upload": "176f5ecd-e730-484d-8cbc-a65411d7f848", "uuid": "e337026b-2aeb-4b34-a7af-32d6a35523be", "category": "", "categoryName": "", "comment": "" }]);
+                    break;
+                case this.type.TELEPHONE:
+                    return "+41000000000";
                 default:
                     console.log("unknown component type: ", componentType);
                     break;
@@ -231,22 +241,22 @@ class HelperComponentsCheckService {
 
     helperCheckComponentOptions(componentOptions, separator) {
         var option = null;
-        if(this.CHECKINPUT.isArray(componentOptions)) {
+        if (this.CHECKINPUT.isArray(componentOptions)) {
             option = (componentOptions[0].search(separator) != -1) ? componentOptions[0].split(separator)[0] : componentOptions[0];
-        } else if(this.CHECKINPUT.isString(componentOptions)) {
+        } else if (this.CHECKINPUT.isString(componentOptions)) {
             option = componentOptions.split(separator)[0];
         }
         return option;
     }
 
     helperRetry() {
-       this.rounds--;
-       clearTimeout(this.rounds);
+        this.rounds--;
+        clearTimeout(this.rounds);
     }
 };
 
 class HelperVariableCheckService {
-    constructor() {}
+    constructor() { }
     /**
      *
      *
@@ -327,7 +337,34 @@ class HelperVariableCheckService {
     static isBoolean() {
         return (this.checkType(item)) ? true : false;
     }
+    static getHiddenComponents(initator) {
+        guideBridge.on("elementVisibleChanged", function (event, payload) {
+            var component = payload.target;
+            var newValue = payload.newText;
+            if (newValue) {
+                initator.initFillForm();
+            }
+        });
+    }
+    static validatioStatusCheck(event,payload,counter) {
+        var component = payload.target;
+        //TODO displayPatterns detection
+        try {
+            if (component.jsonModel.displayPictureClause.search("currency") != -1) {
+                guidelib.i18n.numberSymbols.grouping = "'";
+                component.jsonModel.displayPictureClause = component.jsonModel.displayPictureClause.replace("currency", "num").replaceAll("'", ",");
+                component._triggerDisplayFormatChange(component.value);
+            }
+        } catch (e) {
+
+        }
+        if (!component.isValid && !(counter > 2)) {
+            initator.initFillForm();
+            counter++;
+        }
+    }
 };
+
 /**
  *
  *
@@ -357,5 +394,5 @@ var helperObjectIterator = function (item) {
 (function () {
     var initiator = new HelperComponentsCheckService();
     initiator.initFillForm();
-    setTimeout(initiator.initFillForm(),2000);
+
 })();
