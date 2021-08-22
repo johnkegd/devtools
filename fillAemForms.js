@@ -35,6 +35,7 @@
 // });
 
 class HelperComponentsCheckService {
+    fillUploadComponents = false;
     type = {
         CHECKBOX: "checkbox",
         TEXTBOX: "textbox",
@@ -49,11 +50,8 @@ class HelperComponentsCheckService {
     CHECKINPUT = HelperVariableCheckService;
     counter = 0;
     constructor() {
-        guideBridge.on("elementValidationStatusChanged",
-            HelperVariableCheckService.validatioStatusCheck(event, payload, this.counter));
 
-
-       // HelperVariableCheckService.getHiddenComponents(this);
+        // HelperVariableCheckService.getHiddenComponents(this);
     }
 
     static getSomList() {
@@ -82,6 +80,7 @@ class HelperComponentsCheckService {
 
     getValues(somList) {
         var valuesResult = [];
+        var componentsList = [];
         try {
             var guideResultObject = this.helperGetElementsProperty("options", somList);
             if (this.CHECKINPUT.isNotNull(guideResultObject.data) && !this.CHECKINPUT.isUndefined(guideResultObject.data)) {
@@ -108,14 +107,14 @@ class HelperComponentsCheckService {
                     }
                     break;
                 case this.type.TEXTBOX:
-                    if (!this.CHECKINPUT.isUndefined(componentData.displayPictureClause)) {
-                        var valuePattern = componentData.displayPictureClause;
-                        return valuePattern.substring(valuePattern.lastIndexOf("{") + 1, valuePattern.length - 1);
-                    } else if (!this.CHECKINPUT.isUndefined(componentData.shortDescription)) {
-                        if (componentData.shortDescription.search("41") != -1 || componentData.shortDescription.search("000") != -1) {
-                            return "+41 00 000 00 00";
-                        }
-                    }
+                    //                     if (!this.CHECKINPUT.isUndefined(componentData.displayPictureClause)) {
+                    //                         var valuePattern = componentData.displayPictureClause;
+                    //                         return valuePattern.substring(valuePattern.lastIndexOf("{") + 1, valuePattern.length - 1);
+                    //                     } else if (!this.CHECKINPUT.isUndefined(componentData.shortDescription)) {
+                    //                         if (componentData.shortDescription.search("41") != -1 || componentData.shortDescription.search("000") != -1) {
+                    //                             return "+41 00 000 00 00";
+                    //                         }
+                    //                     }
                     return "Text example";
                     break;
                 case this.type.NUMERICBOX:
@@ -164,7 +163,13 @@ class HelperComponentsCheckService {
                     return value;
                     break;
                 case this.type.FILEUPLOAD:
-                    return JSON.stringify([{ "name": "Template.pdf", "uuid_upload": "176f5ecd-e730-484d-8cbc-a65411d7f848", "uuid": "e337026b-2aeb-4b34-a7af-32d6a35523be", "category": "", "categoryName": "", "comment": "" }]);
+                    if (this.fillComponents()) {
+                        return JSON.stringify([{ "name": "Template.pdf", "uuid_upload": "176f5ecd-e730-484d-8cbc-a65411d7f848", "uuid": "e337026b-2aeb-4b34-a7af-32d6a35523be", "category": "", "categoryName": "", "comment": "" }]);
+                    } else {
+                        this.type.FILEUPLOAD = "skip";
+                        console.log("so skip fileupload components");
+                    }
+
                     break;
                 case this.type.TELEPHONE:
                     return "+41000000000";
@@ -175,6 +180,23 @@ class HelperComponentsCheckService {
 
         } catch (error) {
             console.error("Error while getElementValue: ", error);
+        }
+    }
+
+    fillComponents() {
+        if (!this.fillUploadComponents) {
+            var deactiveParamters = ["no", "nein", "non", "n", "false"]
+            var optionSelected = prompt('fill fileUploads', false);
+            if (deactiveParamters.includes(optionSelected)) {
+                this.fillUploadComponents = true;
+                return false;
+            } else {
+                this.fillUploadComponents = true;
+                return this.fillUploadComponents;
+            }
+        } else {
+            this.fillUploadComponents = true;
+            return this.fillUploadComponents;
         }
     }
 
@@ -346,7 +368,7 @@ class HelperVariableCheckService {
             }
         });
     }
-    static validatioStatusCheck(event,payload,counter) {
+    static validatioStatusCheck(event, payload, counter) {
         var component = payload.target;
         //TODO displayPatterns detection
         try {
@@ -392,7 +414,12 @@ var helperObjectIterator = function (item) {
 
 
 (function () {
+    var counter = 0;
     var initiator = new HelperComponentsCheckService();
     initiator.initFillForm();
+
+    //     guideBridge.on("elementValidationStatusChanged",function (event, payload) {
+    //         HelperVariableCheckService.validatioStatusCheck(event, payload);
+    //     });
 
 })();
