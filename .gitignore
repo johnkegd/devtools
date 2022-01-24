@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+*.zip
+*.jar
+/ItermLogs
+/MacWorkFlows/Iterm2_workspace
+/vlt
+/AEM/formsandoc
+/AEM/testTool
+/AEM/coreComponents
+/AlfredWorkflows/alfred-font-awesome-workflow
