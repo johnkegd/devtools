@@ -1,0 +1,969 @@
+/* Created by Johnkegd */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Turret Road', cursive;
+}
+
+.virat {
+    width: 400px;
+    height: 100vh;
+    background: pink;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    overflow: hidden
+}
+
+h2 {
+    color: white;
+    z-index: 1000;
+    position: absolute;
+    top: 460px;
+    left: 50px;
+    opacity: 0;
+    animation: text 1s linear 60s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes text {
+    100% {
+        opacity: 1
+    }
+}
+
+.light-base {
+    position: absolute;
+    bottom: -0px;
+    left: 10vw;
+    width: 80vw;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: -0px -10px 30px 10px #ffc1a0, -0px -20px 40px 20px #fe9c7f, -0px -30px 60px 30px #be6590, -0px -50px 150px 75px #632b6c;
+    background-color: #ffc1a0;
+    z-index: 10;
+}
+
+.backlayer1 {
+    top: -00px;
+    background: #060010;
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%);
+    background-size: 10px 10px, 15px 3px, 5px 15px, 3px 13px, 6px 6px, 14px 4px, 5px 5px, 14px 4px, 6px 6px, 13px 3px, 5px 15px, 4px 14px, 3px 13px, 6px 16px, 15px 5px, 4px 4px, 5px 15px, 6px 16px;
+    background-position: 20% 10%, 5% 20%, 10% 75%, 22% 35%, 30% 30%, 40% 50%, 45% 20%, 65% 20%, 85% 30%, 98% 90%, 20% 80%, 50% 80%, 75% 80%, 89% 75%, 90% 95%, 60% 70%, 65% 40%, 90% 20%;
+    background-repeat: no-repeat;
+    animation: twinkle ease-in 0.3s infinite;
+}
+
+.front {
+    width: 100%;
+    height: 700px;
+    animation: f 0.01s linear 7s 1, f2 0.1s linear 15s 1, f3 0.1s linear 22s 1, f4 0.1s linear 34s 1, f5 1s linear 41s 1, f6 1s linear 46s 1, f7 1s linear 53s 1, f8 1s linear 55s 1;
+    animation-fill-mode: forwards;
+    position: absolute;
+    z-index: -2000;
+}
+
+@keyframes f8 {
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes f6 {
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes f7 {
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes f {
+    0% {
+        display: block
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes f2 {
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes f3 {
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes f4 {
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes f5 {
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes twinkle {
+    to {
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%), radial-gradient(circle, #fff 20%, transparent 30%);
+    }
+}
+
+.mountain1 {
+    width: 180px;
+    height: 80px;
+    border-radius: 24% 76% 70% 30% / 95% 71% 29% 5%;
+    position: absolute;
+    background: #29144D;
+    box-shadow: 1px -5px 29px 1px #0e0717;
+    top: -50px;
+    left: -10px
+}
+
+.mountain2 {
+    width: 100px;
+    height: 50px;
+    border-radius: 45% 55% 70% 30% / 95% 71% 29% 5%;
+    background: #29144D;
+    position: absolute;
+    left: 100px;
+    top: 30px;
+    left: 120px;
+    box-shadow: 1px -5px 29px 1px #0e0717;
+    top: -20px;
+}
+
+.land {
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    background: #201836;
+    top: 200px;
+    box-shadow: 0px -4px 30px 10px #29144D;
+    z-index:
+}
+
+.mountain3 {
+    width: 100px;
+    height: 150px;
+    background: #274C96;
+    border-radius: 45% 55% 70% 30% / 95% 71% 29% 5%;
+    position: absolute;
+    left: -30px;
+    box-shadow: -0px 10px 10px 2px black;
+}
+
+.mountain4 {
+    width: 70px;
+    height: 70px;
+    background: #274C96;
+    border-radius: 45% 55% 70% 30% / 95% 71% 29% 5%;
+    position: absolute;
+    left: 40px;
+    box-shadow: -0px 10px 20px 2px black;
+    top: 73px;
+}
+
+.stone1 {
+    width: 40px;
+    height: 20px;
+    border-radius: 60% 40% 70% 30% / 95% 96% 4% 5%;
+    background: #312748;
+    position: absolute;
+    top: 250px;
+    left: 40px;
+}
+
+.shurb1 {
+    width: 40px;
+    height: 20px;
+    border-radius: 95% 5% 70% 30% / 95% 0% 100% 5%;
+    background: #64297C;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    animation: shurb1 3s linear 0.1s infinite;
+}
+
+.shurb2 {
+    width: 40px;
+    height: 20px;
+    border-radius: 95% 5% 100% 0% / 95% 0% 100% 5%;
+    background: #64297C;
+    position: absolute;
+    top: 186px;
+    left: 100px;
+    transform: rotateZ(-50deg);
+    transform-origin: bottom;
+    animation: shurb2 3s linear 0.1s infinite;
+}
+
+.shurb3 {
+    width: 40px;
+    height: 20px;
+    border-radius: 95% 5% 100% 0% / 95% 0% 100% 5%;
+    background: #64297C;
+    position: absolute;
+    top: 180px;
+    left: 88px;
+    transform: rotateZ(-70deg);
+    transform-origin: bottom;
+    animation: shurb3 3s linear 0.1s infinite;
+}
+
+@keyframes shurb3 {
+    0%,
+    100% {
+        border-radius: 95% 5% 100% 0% / 95% 0% 100% 5%
+    }
+    30% {
+        border-radius: 95% 5% 50% 50% / 95% 0% 100% 5%;
+        transform: rotateZ(-68deg)
+    }
+    60% {
+        border-radius: 95% 5% 100% 0% / 95% 0% 100% 5%;
+        width: 42px;
+        transform: rotateZ(-73deg)
+    }
+}
+
+@keyframes shurb2 {
+    0%,
+    100% {
+        border-radius: 95% 5% 100% 0% / 95% 0% 100% 5%
+    }
+    30% {
+        border-radius: 69% 31% 100% 0% / 95% 10% 90% 5%;
+        transform: rotateZ(-49deg)
+    }
+    60% {
+        border-radius: 0% 100% 100% 0% / 95% 100% 0% 5%;
+        width: 42px;
+        transform: rotateZ(-51deg)
+    }
+}
+
+@keyframes shurb1 {
+    0%,
+    100% {
+        border-radius: 95% 5% 100% 0% / 95% 0% 100% 5%
+    }
+    30% {
+        border-radius: 69% 31% 100% 0% / 95% 10% 90% 5%;
+        transform: rotateZ(-0deg)
+    }
+    60% {
+        border-radius: 0% 100% 100% 0% / 95% 100% 0% 5%;
+        width: 42px;
+        transform: rotateZ(-0deg)
+    }
+}
+
+.man {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.face {
+    width: 40px;
+    height: 30px;
+    border-radius: 82% 18% 100% 0% / 95% 80% 20% 5%;
+    background: #FFCD94;
+    position: absolute
+}
+
+.face2 {
+    width: 33px;
+    height: 30px;
+    border-radius: 100% 0% 58% 42% / 95% 37% 63% 5%;
+    background: #FFCD94;
+    top: 19px;
+    position: absolute;
+    left: 4px;
+    transform: rotateZ(5deg)
+}
+
+.face3 {
+    width: 37px;
+    height: 20px;
+    border-radius: 73% 27% 58% 42% / 95% 50% 50% 5%;
+    background: #FFCD94;
+    top: 20px;
+    position: absolute;
+    left: -0px;
+    transform: rotateZ(10deg);
+    top: 24px
+}
+
+.hair1 {
+    width: 50px;
+    height: 30px;
+    border-radius: 73% 27% 58% 42% / 95% 0% 100% 5%;
+    background: #000;
+    position: absolute;
+    top: -24px;
+    z-index: 1;
+    left: -4px
+}
+
+.hair2 {
+    width: 30px;
+    height: 50px;
+    border-radius: 100% 0% 0% 100% / 50% 10% 90% 50%;
+    background: #000;
+    position: absolute;
+    top: -4px;
+    z-index: 1;
+    left: -20px
+}
+
+.eye {
+    width: 8px;
+    height: 5px;
+    background: white;
+    position: absolute;
+    top: 10px;
+    border-radius: 50%;
+    left: 27px;
+    border: 1px solid;
+    border-bottom: none;
+    transform: rotateZ(-20deg);
+}
+
+.eye1 {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: black;
+    left: 3px;
+    position: absolute;
+    animation: eye 2s linear 1.5s 1, eye1 2s linear 7s 1;
+    animation-fill-mode: forwards;
+}
+
+.shirt {
+    width: 50px;
+    height: 130px;
+    border-radius: 56% 44% 0% 100% / 80% 16% 84% 20%;
+    background: #274C96;
+    position: absolute;
+    top: 50px;
+    z-index: 10;
+    left: -18px;
+    top: 47px;
+}
+
+@keyframes eye {
+    0%,
+    100% {
+        left: 3px
+    }
+    50% {
+        left: 1px
+    }
+}
+
+@keyframes eye1 {
+    0%,
+    100% {
+        left: 3px
+    }
+    50% {
+        left: 1px
+    }
+}
+
+.pant1 {
+    width: 90px;
+    height: 40px;
+    border-radius: 0% 100% 64% 66% / 62% 100% 100% 78%;
+    background: #8B6DAD;
+    position: absolute;
+    top: 150px;
+    left: -10px;
+    transform: rotateZ(-0deg);
+    z-index: 1;
+    box-shadow: 2px -1px 1px 0px #9C83BD;
+}
+
+.pant2 {
+    width: 100px;
+    height: 30px;
+    border-radius: 0% 100% 20% 80% / 22% 60% 40% 78%;
+    background: #8B6DAD;
+    position: absolute;
+    top: 170px;
+    left: -20px;
+    transform: rotateZ(-20deg);
+    box-shadow: 2px -1px 1px 0px #9C83BD;
+    z-index: 2
+}
+
+.shoe {
+    width: 20px;
+    height: 40px;
+    border-radius: 70% 30% 83% 17% / 42% 44% 56% 58%;
+    background: brown;
+    position: absolute;
+    top: 180px;
+    left: -25px;
+    transform: rotateZ(10deg);
+    z-index: 10
+}
+
+.backleg1 {
+    width: 40px;
+    height: 100px;
+    background: #8B6DAD;
+    border-radius: 73% 27% 83% 17% / 100% 76% 24% 0%;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    transform: rotateZ(30deg);
+    z-index: 0
+}
+
+.backleg2 {
+    width: 25px;
+    height: 80px;
+    background: #8B6DAD;
+    border-radius: 53% 47% 100% 0% / 100% 28% 72% 0%;
+    position: absolute;
+    top: -12px;
+    left: 43px;
+    transform: rotateZ(-50deg);
+    z-index: 0
+}
+
+.shoe1 {
+    width: 20px;
+    height: 40px;
+    border-radius: 70% 30% 83% 17% / 42% 44% 56% 58%;
+    background: brown;
+    position: absolute;
+    top: 60px;
+    left: 5px;
+    transform: rotateZ(90deg);
+}
+
+.shoulder {
+    position: absolute;
+    z-index: 20;
+    border-bottom: 60px solid #9C83BD;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 10px;
+    transform-origin: bottom;
+    transform: rotateZ(200deg);
+    top: 20px;
+    animation: shoulder 2s linear 1.5s 1, shoulder2 1s linear 17s 1, shoulder3 1s linear 20s 1, shoulder4 1s linear 36s 1, shoulder5 1s linear 39s 1, shoulder6 1s linear 48s 1, shoulder7 1s linear 51s 1, shoulder8 0.1s linear 56s 1;
+    animation-fill-mode: forwards;
+}
+
+.head {
+    animation: head1 1s linear 1s 1, head2 1s linear 1s 1;
+    animation-fill-mode: forwards;
+    position: absolute
+}
+
+@keyframes head1 {
+    0%,
+    100% {
+        transform: rotateZ(0deg)
+    }
+    20% {
+        transform: rotateZ(10deg)
+    }
+    70% {
+        transform: rotateZ(13deg)
+    }
+    80% {
+        transform: rotateZ(-5deg)
+    }
+}
+
+@keyframes shoulder8 {
+    to {
+        transform: rotateZ(200deg)
+    }
+}
+
+@keyframes shoulder7 {
+    to {
+        transform: rotateZ(80deg)
+    }
+}
+
+@keyframes shoulder {
+    to {
+        transform: rotateZ(80deg)
+    }
+}
+
+@keyframes shoulder2 {
+    to {
+        transform: rotateZ(120deg)
+    }
+}
+
+@keyframes shoulder3 {
+    to {
+        transform: rotateZ(80deg)
+    }
+}
+
+@keyframes shoulder4 {
+    to {
+        transform: rotateZ(140deg)
+    }
+}
+
+@keyframes shoulder5 {
+    to {
+        transform: rotateZ(80deg)
+    }
+}
+
+@keyframes shoulder6 {
+    to {
+        transform: rotateZ(180deg)
+    }
+}
+
+.s {
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    background: #9C83BD;
+    position: absolute;
+    top: 40px;
+    left: -5px
+}
+
+.forearm {
+    position: absolute;
+    z-index: 20;
+    border-bottom: 60px solid #9C83BD;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 8px;
+    transform-origin: bottom;
+    transform: rotateZ(-90deg);
+    top: -53px;
+    left: -0px
+}
+
+.hand {
+    width: 17px;
+    height: 30px;
+    background: #FFCE95;
+    border-radius: 15% 85% 45% 55% / 60% 77% 23% 40%;
+    left: -3px;
+    position: absolute;
+    top: -20px
+}
+
+.telescope {
+    border-bottom: 80px solid orange;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 10px;
+    transform: rotateZ(-97deg);
+    position: absolute;
+    top: -50px;
+    left: 20px;
+    z-index: -1;
+    animation: tele 0.5s linear 56.5s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tee {
+    100% {
+        top: 200px;
+        left: -50px;
+        transform: rotateZ(0deg)
+    }
+}
+
+.telescope::after {
+    width: 20px;
+    height: 10px;
+    background: red;
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: -5px
+}
+
+.moon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: radial-gradient(#eee, #ddd, #ccc);
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    box-shadow: 10px 5px 50px 5px white;
+}
+
+.second {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    overflow: hidden;
+    animation: second 0.01s linear 7s 1, second2 0.1s linear 15s 1, second3 0.1s linear 22s 1, second4 0.1s linear 34s 1, second5 1s linear 41s 1, second6 1s linear 46s 1, second7 1s linear 53s 1, second8 1s linear 55s 1;
+    animation-fill-mode: forwards;
+    z-index: -1500
+}
+
+@keyframes second8 {
+    100% {
+        visibility: hidden
+    }
+}
+
+@keyframes second6 {
+    100% {
+        visibility: hidden
+    }
+}
+
+@keyframes second {
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes second2 {
+    100% {
+        visibility: hidden
+    }
+}
+
+@keyframes second3 {
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes second4 {
+    100% {
+        visibility: hidden
+    }
+}
+
+@keyframes second5 {
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes second7 {
+    100% {
+        visibility: visible
+    }
+}
+
+.neptune {
+    background: linear-gradient(to left, #292e49, #536976, #bbd2c5);
+    box-shadow: -25px 0 48px -17px #f890a1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 20vh;
+    left: 35vw;
+    transform: scale(0.5);
+    animation: neptune1 0.01s linear 7s 1, neptune2 2s linear 9s 1, neptune3 0.1s linear 15s 1;
+    animation-fill-mode: forwards;
+    transform: scale(0.5)
+}
+
+@keyframes neptune1 {
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes neptune2 {
+    0% {
+        transform: scale(0.5)
+    }
+    50% {
+        transform: scale(1)
+    }
+    100% {
+        visibility: visible;
+        transform: scale(2)
+    }
+}
+
+@keyframes neptune3 {
+    100% {
+        visibility: hidden
+    }
+}
+
+.stars {
+    width: 1000px;
+    height: 100vh;
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%), radial-gradient(circle, rgba(255, 255, 255, 0.7) 20%, transparent 30%);
+    background-size: 10px 10px, 15px 3px, 5px 15px, 3px 13px, 6px 6px, 14px 4px, 5px 5px, 14px 4px, 6px 6px, 13px 3px, 5px 15px, 4px 14px, 3px 13px, 6px 16px, 15px 5px, 4px 4px, 5px 15px, 6px 16px;
+    background-position: 20% 10%, 5% 20%, 10% 75%, 22% 35%, 30% 30%, 40% 50%, 65% 20%, 35% 20%, 15% 30%, 18% 10%, 20% 10%, 50% 80%, 75% 80%, 89% 75%, 10% 35%, 30% 30%, 35% 40%, 40% 20%;
+    background-repeat: no-repeat;
+    animation: twinkle ease-in 0.3s infinite;
+    left: 00px;
+    position: absolute;
+}
+
+.jupiter {
+    width: 150px;
+    height: 150px;
+    background: #DD6A00;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    overflow: hidden;
+    animation: jup 1s linear 0.1s infinite, jupiter 0.1s linear 22s 1, jupiter1 0.1s linear 34s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes jup {
+    0%,
+    100% {
+        top: 200px;
+        left: 150px
+    }
+    20% {
+        top: 198px;
+        left: 153px
+    }
+    60% {
+        top: 202px;
+        left: 149px
+    }
+}
+
+@keyframes jupiter {
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes jupiter1 {
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        visibility: visible;
+        top: 200px;
+        left: 150px
+    }
+    20% {
+        visibility: visible;
+        top: 195px;
+        left: 151px
+    }
+    60% {
+        visibility: visible;
+        top: 198px;
+        left: 154px
+    }
+}
+
+.j1 {
+    width: 150px;
+    height: 15px;
+    background: #FEA500;
+    position: absolute;
+    top: 30px
+}
+
+.j2 {
+    width: 160px;
+    height: 10px;
+    background: #C03E00;
+    position: absolute;
+    top: 45px
+}
+
+.j3 {
+    width: 160px;
+    height: 15px;
+    background: #C03E00;
+    position: absolute;
+    top: 65px
+}
+
+.j4 {
+    width: 160px;
+    height: 12px;
+    background: #FEA500;
+    position: absolute;
+    top: 80px
+}
+
+.j5 {
+    width: 160px;
+    height: 50px;
+    background: #FEA500;
+    position: absolute;
+    top: 80px
+}
+
+.j6 {
+    width: 160px;
+    height: 15px;
+    background: #DC6000;
+    position: absolute;
+    top: 100px
+}
+
+.dust {
+    width: 20px;
+    height: 10px;
+    background: #B52E00;
+    border-radius: 50%;
+    position: absolute;
+    left: 140px;
+    top: 0px;
+    border: 5px solid #DC6000;
+    animation: dust 5s linear 0.1s infinite;
+}
+
+@keyframes dust {
+    100% {
+        left: -200px
+    }
+}
+
+.saturn {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /*background-color: #60a5b1;*/
+    background-color: #BDA066;
+    background: linear-gradient(to right, #BDA066 0%, #C9AB71 100%);
+    border-radius: 100%;
+    top: 100px;
+    left: 70px;
+    z-index: 1;
+    transform: rotate(26deg) scale(0.5);
+    animation: saturn 1s linear 1s infinite, saturn1 1s linear 41s 1, saturn2 1s linear 46s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes saturn1 {
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes saturn2 {
+    100% {
+        visibility: hidden
+    }
+}
+
+@keyframes saturn {
+    0%,
+    100% {
+        top: 105px;
+        left: 70px
+    }
+    30% {
+        left: 74px
+    }
+    50% {
+        top: 102px;
+        left: 72px
+    }
+}
+
+.ring2 {
+    width: 200px;
+    height: 100px;
+    background: red;
+    background: linear-gradient(to right, #E1C48F 1%, #C9AB71 60%);
+    border-top-left-radius: 7em;
+    border-top-right-radius: 7em;
+    z-index: 900;
+}
+
+.ring1 {
+    /* background: radial-gradient(
+    #ffffff00 0%,
+    #ffffff00 46%,
+    #75206ee8 54%,
+    #6915cac9 56%,
+    #c625cc1f 82%,
+    #00000000 100%
+  );
+ */
+    background: radial-gradient( #fff 0%, #62616F 46%, #343436 54%, #DED2D2 56%, #AEA39F 82%, #AEA39F 100%);
+    position: absolute;
+    width: 380px;
+    height: 60px;
+    border-radius: 80% 80% 80% 80% / 80% 80% 80% 80%;
+    top: 68px;
+    left: -90px;
+    transform: perspective(2.4px) rotateX(2deg);
+    z-index: -1;
+}
+
+img {
+    width: 160px;
+    height: auto;
+    background-size: cover;
+    position: absolute;
+    top: 100px;
+    left: 120px;
+    animation: solo 2s linear 1s infinite, img 1s linear 53s 1, img1 1s linear 55s 1;
+    animation-fill-mode: forwards
+}
+
+@keyframes solo {
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
+
+@keyframes img {
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes img1 {
+    100% {
+        visibility: hidden
+    }
+}

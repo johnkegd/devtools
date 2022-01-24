@@ -1,0 +1,40 @@
+/* Created by Johnkegd [ Inactive Till 2020 ] */
+
+body {
+  font-family: 'Righteous', cursive; color:white; text-align: center; background: #dd4848; background-image: url('https://i.imgur.com/BiSmXaq.png'), url('https://i.imgur.com/XHuy0NJ.png'), url('https://i.imgur.com/okpRxJU.png') ;
+  -webkit-animation: snow 20s linear infinite;
+  -moz-animation: snow 20s linear infinite;
+  -ms-animation: snow 20s linear infinite;
+  animation: snow 20s linear infinite;
+}
+
+@-moz-keyframes snow {
+  0% { background-position: 0px, 0px, 0px, 0xp, 0xp, 0xp}
+  50% { background-color: #dc5959 }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px;
+  background-color: #dd4848;
+  }
+@-webkit-keyframes snow {
+  0% { background-position: 0px, 0px, 0px, 0xp, 0xp, 0xp}
+  50% { background-color: #dc5959 }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px;
+  background-color: #dd4848;
+  }
+} @-ms-keyframes snow {
+  0% { background-position: 0px, 0px, 0px, 0xp, 0xp, 0xp}
+  50% { background-color: #dc5959 }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px;
+  background-color: #dd4848;
+  }
+}
+}
+@keyframes snow {
+  0% { background-position: 0px, 0px, 0px, 0xp, 0xp, 0xp}
+  50% { background-color: #dc5959 }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px;
+  background-color: #dd4848;
+  }
+}
+
+
+

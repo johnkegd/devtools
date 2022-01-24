@@ -1,0 +1,334 @@
+/* Created by Johnkegd [#Be Happy 👻] */
+
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
+body {
+    background-color: #ffcc66;
+}
+.shoe-1 {
+    position: fixed;
+    opacity: 0;
+    top: 70vw;
+    animation: fade 5s 1s ease-in-out infinite;
+    transform: rotateX(60deg);
+}
+.shoe-2 {
+    position: fixed;
+    opacity: 0;
+    top: 78vw;
+    left: 10vw;
+    animation: fade 5s 1.5s ease-in-out infinite;
+    transform: rotateX(60deg);
+}
+.shoe-3 {
+    position: fixed;
+    opacity: 0;
+    top: 70vw;
+    left: 20vw;
+    animation: fade 5s 2s ease-in-out infinite;
+    transform: rotateX(60deg);
+}
+.shoe-4 {
+    position: fixed;
+    opacity: 0;
+    top: 78vw;
+    left: 30vw;
+    animation: fade 5s 2.5s ease-in-out infinite;
+    transform: rotateX(60deg);
+}
+.shoe-5 {
+    position: fixed;
+    opacity: 0;
+    top: 70vw;
+    left: 42vw;
+    animation: fade 5s 3s ease-in-out infinite;
+    transform: rotateX(60deg);
+}
+.shoe-6 {
+    position: fixed;
+    opacity: 0;
+    top: 78vw;
+    left: 52vw;
+    animation: fade 5s 3.5s ease-in-out infinite;
+    transform: rotateX(60deg);
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    25%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.back-1{
+    background-color: brown;
+    position: fixed;
+    width: 4vw;
+    height: 3vh;
+    border-radius: 84% 41% 49% 81% / 92% 85% 85% 97%;
+    left: 15vw;
+}
+.front-1 {
+    background-color: brown;
+    position: fixed;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 28% 72% 74% 26% / 53% 50% 50% 47%;
+    left: 20vw;
+}
+.back-2 {
+    background-color: brown;
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    border-radius: 84% 41% 49% 81% / 92% 85% 85% 97%;
+    left: 15vw;
+}
+.front-2 {
+    background-color: brown;
+    position: absolute;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 28% 72% 74% 26% / 53% 50% 50% 47%;
+    left: 20vw;
+}
+.back-3 {
+    background-color: brown;
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    border-radius: 84% 41% 49% 81% / 92% 85% 85% 97%;
+    left: 15vw;
+}
+.front-3 {
+    background-color: brown;
+    position: absolute;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 28% 72% 74% 26% / 53% 50% 50% 47%;
+    left: 20vw;
+}
+.back-4{
+    background-color: brown;
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    border-radius: 84% 41% 49% 81% / 92% 85% 85% 97%;
+    left: 15vw;
+}
+.front-4 {
+    background-color: brown;
+    position: absolute;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 28% 72% 74% 26% / 53% 50% 50% 47%;
+    left: 20vw;
+}
+.back-5{
+    background-color: brown;
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    border-radius: 84% 41% 49% 81% / 92% 85% 85% 97%;
+    left: 15vw;
+}
+.front-5 {
+    background-color: brown;
+    position: absolute;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 28% 72% 74% 26% / 53% 50% 50% 47%;
+    left: 20vw;
+}
+.back-6{
+    background-color: brown;
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    border-radius: 84% 41% 49% 81% / 92% 85% 85% 97%;
+    left: 15vw;
+}
+.front-6 {
+    background-color: brown;
+    position: absolute;
+    width: 8vw;
+    height: 3vh;
+    border-radius: 28% 72% 74% 26% / 53% 50% 50% 47%;
+    left: 20vw;
+}
+
+.body {
+    position: fixed;
+    width: 25vw;
+    height: 18vh;
+    background-color: white;
+    border-radius: 50px 50px 0px 0px;
+    top: 5vw;
+    left: 37vw;
+}
+.base-1 {
+    position: fixed;
+    width: 8vw;
+    height: 5vh;
+    background-color: white;
+    border-radius: 50px;
+    top: 30vw;
+    left: 37vw;
+}    
+.base-1:before {
+    content:'';
+    position: fixed;
+    width: 10vw;
+    height: 5vh;
+    background-color: white;
+    border-radius: 50px;
+    left: 44.5vw;
+}
+.base-1:after {
+    content:'';
+    position: fixed;
+    width: 8vw;
+    height: 5vh;
+    background-color: white;
+    border-radius: 50px;
+    left: 54vw;
+}
+.eye-l {
+    position: fixed;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50px;
+    background-color: black;
+    top: 16vw;
+    left: 43vw;
+    animation: eyes 2s 10s linear forwards;
+}
+.eye-r {
+    position: fixed;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50px;
+    background-color: black;
+    top: 16vw;
+    left: 53vw;
+    animation: eyes 2s 10s linear forwards;
+}
+@keyframes eyes{
+    100%{
+        border-top: 3px solid black;
+        background-color: transparent;
+        border-radius: 50px 50px 0 0;
+    }
+}
+.mouth {
+    position: fixed;
+    width: 4vw;
+    height: 1vw;
+    background-color: transparent;
+    border-radius: 0px 0px 50px 50px;
+    border-bottom: 3px solid black;
+    top: 20vw;
+    left: 47vw;
+}
+.shadow {
+    position: fixed;
+    width: 25vw;
+    height: 4vh;
+    background-color: #663300;
+    border-radius: 50%;
+    filter: blur(5px);
+    top: 46.5vw;
+    left: 37.5vw;
+    animation: move 2s linear infinite;
+}
+.ghost {
+    opacity: 0;
+    animation: fade2 3s 6s linear forwards,float 2s linear infinite;
+}
+@keyframes float {
+    0%,100% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+}
+@keyframes move {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.7);
+    }
+}
+@keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.words {
+    position: fixed;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Shadows Into Light', cursive;
+}
+.one {
+    position: fixed;
+    font-size: 80px;
+    letter-spacing: 7px;
+    left: 33vw;
+    top: 16vw;
+    animation: fade3 4s 2s linear forwards;
+    opacity: 0;
+}
+@keyframes fade3 {
+    0%,100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.two {
+    position: fixed;
+    opacity: 0;
+    letter-spacing: 3px;
+    bottom: 36vw;
+    left: 15vw;
+    animation: fade3 4s 7s linear forwards;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate(-1px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate(3px, 5px);
+  }
+
+  30%, 50%, 70% {
+    transform: translate(-6px, -5px);
+  }
+
+  40%, 60% {
+    transform: translate(4px,0);
+  }
+}
+.third {
+    position: fixed;
+    font-size: 40px;
+    letter-spacing: 4px;
+    bottom: 33vw;
+    left: 5vw;
+    opacity: 0;
+    animation: shake 3s linear infinite,fade2 3s 11s linear forwards;
+}

@@ -3,9 +3,9 @@
 *.zip
 *.jar
 /ItermLogs
-/MacWorkFlows/Iterm2_workspace
+/mac/workflows/iterm2_workspace
 /vlt
-/AEM/formsandoc
-/AEM/testTool
-/AEM/coreComponents
-/AlfredWorkflows/alfred-font-awesome-workflow
+/aem/formsandoc
+/aem/testTool
+/aem/coreComponents
+/alfred/workflows/alfred-font-awesome-workflow

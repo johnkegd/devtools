@@ -1,0 +1,94 @@
+/* by Johnkegd */
+
+body {
+    
+}
+
+.container{
+    
+    width:100%;
+    height:100%;
+    z-index:1;
+    position:absolute;
+    display:block;
+}
+
+aside{
+    
+    Background:orange;
+    margin-top:100px;
+}
+
+nav{
+    background:orange;
+    margin-right:80%;
+    text-align:center;
+    filter:drop-shadow(0 0 5px #999);
+}
+
+
+
+.right{
+    Background:red;
+    float:right;
+    Width:33%;
+    text-align:center;
+    color:white;
+    filter:drop-shadow(0 0 5px #999);
+    height:100px;
+    
+}
+
+.centro{
+    margin-left:1%;
+    margin-right:1%;
+    Background:green;
+    float:left;
+    Width:32%;
+    text-align:center;
+    color:white;
+    filter:drop-shadow(0 0 5px #999);
+    height:100px;
+    z-index:1;
+}
+
+.left{
+    Background:blue;
+    float:left;
+    Width:33%;
+    text-align:center;
+    color:white;
+    filter:drop-shadow(0 0 5px #999);
+    height:100px;
+    
+}
+
+.alien{
+    Background:#424242;
+    text-align:center;
+    width:50%;
+    height:50px;
+    margin-left:28%;
+    
+}
+
+.nave{
+    margin-top:27%;
+    z-index:5;
+    position:sticky;
+}
+
+.eje{
+    Background:red;
+    text-align:center;
+    color:white;
+}
+
+.intern{
+    Margin:100px;
+    Background:black;
+    Color:white;
+    text-align:center;
+    border:10px solid white;
+
+}

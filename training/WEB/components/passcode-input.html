@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .passcode.container {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .inputs-container {
+            margin-top: 8px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .inputs-container input {
+            width: 38px;
+            height: 48px;
+            font-size: 40px;
+            padding-right: 8px;
+            border: 0.5px solid rgba(56, 56, 59, 0.911);
+            box-sizing: border-box;
+            margin-right: 8px;
+            padding: 0;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .inputs-container input:focus {
+            height: 58px;
+            border: 1px solid rgb(19, 19, 73);
+            box-shadow: 0 3px 6px rgb(0, 0, 16, 50%);
+        }
+
+        .passcode.container .value-preview {
+            display: flex;
+
+        }
+
+        .value-preview p {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="passcode container">
+        Numeric passcode component
+        <div class="inputs-container" id="controller" data-id="" state>
+            <input type="tel" pattern="[0-9]*" value data-id="0" />
+            <input type="tel" pattern="[0-9]*" value data-id="1" />
+            <input type="tel" pattern="[0-9]*" value data-id="2" />
+            <input type="tel" pattern="[0-9]*" value data-id="3" />
+            <input type="tel" pattern="[0-9]*" value data-id="4" />
+            <input type="tel" pattern="[0-9]*" value data-id="5" />
+        </div>
+        <div class="value-preview">
+            <p>current value: </p>
+            <p id="value">value</p>
+        </div>
+    </div>
+
+    <script>
+
+        let value;
+        let control;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let controller = document.getElementById("controller");
+            let inputs = controller.querySelectorAll("input");
+            value = controller.parentElement.querySelector(".value-preview #value");
+            inputs.forEach(input => {
+                input.oninput = oninputHandler;
+            });
+        });
+
+        function oninputHandler() {
+            let validateInput = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+            let nextValue = "";
+
+            this.value = validateInput.slice(0, 1);
+
+            if (validateInput.length > 1) {
+                nextValue = validateInput.slice(1, 2);
+                if (this.nextElementSibling) {
+                    this.nextElementSibling.value = nextValue;
+                    this.nextElementSibling.setAttribute("value", nextValue);
+                    this.nextElementSibling.focus();
+                }
+            }
+
+            this.parentElement.setAttribute("state",)
+
+        }
+    </script>
+</body>
+
+</html>
