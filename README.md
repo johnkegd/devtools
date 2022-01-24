@@ -24,7 +24,7 @@
   <summary>Table of contents</summary>
   <ol>
     <li>
-      <a href="https://github.com/johnkegd/aem">Aem</a>
+      <a href="/aem">Aem</a>
       <ul>
         <li><a href="/aem/coreComponents">Core components</a></li>
         <li><a href="/aem/utilityFormsFunctions">Utility forms functions</a></li>
