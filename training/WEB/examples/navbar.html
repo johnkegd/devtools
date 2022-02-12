@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="app" />
+		<link rel="icon" href="#" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      
+      :root {
+	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+	--pure-white: #ffffff;
+	--primary-color: #b9c6d2;
+	--secondary-color: #d0dde9;
+	--tertiary-color: #000000;
+	--accent-color: #ff3e00;
+	--heading-color: rgba(0, 0, 0, 0.7);
+	--text-color: #444444;
+	--background-without-opacity: rgba(255, 255, 255, 0.7);
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
+}
+      
+      
+      
+      header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.corner {
+		width: 3em;
+		height: 3em;
+	}
+
+	.corner a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.corner img {
+		width: 2em;
+		height: 2em;
+		object-fit: contain;
+	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+		--background: white;
+	}
+
+	svg {
+		width: 2em;
+		height: 3em;
+		display: block;
+	}
+
+	path {
+		fill: var(--background);
+	}
+
+	ul {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		height: 3em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		background: var(--background);
+		background-size: contain;
+	}
+
+	li {
+		position: relative;
+		height: 100%;
+	}
+
+	li.active::before {
+		--size: 6px;
+		content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: calc(50% - var(--size));
+		border: var(--size) solid transparent;
+		border-top: var(--size) solid var(--accent-color);
+	}
+
+	nav a {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 0 1em;
+		color: var(--heading-color);
+		font-weight: 700;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: color 0.2s linear;
+	}
+
+	a:hover {
+		color: var(--accent-color);
+	}
+      
+      
+    </style>
+	</head>
+	<body>
+    <header>
+	<div class="corner">
+		<a href="#">
+			<img src="/" alt="logo" />
+		</a>
+	</div>
+
+	<nav>
+		<svg viewBox="0 0 2 3" aria-hidden="true">
+			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+		</svg>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li>
+				<ahref="/demos">Demos</a>
+			</li>
+			<li>
+				<a href="/todos">Todos</a>
+			</li>
+		</ul>
+		<svg viewBox="0 0 2 3" aria-hidden="true">
+			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+		</svg>
+	</nav>
+	<div class="corner">
+	</div>
+</header>
+	</body>
+</html>
