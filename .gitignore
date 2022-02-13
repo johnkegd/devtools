@@ -2,10 +2,12 @@
 .DS_Store
 *.zip
 *.jar
+*.vscode
 /ItermLogs
 /mac/workflows/iterm2_workspace
 /vlt
 /aem/formsandoc
 /aem/testTool
 /aem/coreComponents
-/alfred/workflows/alfred-font-awesome-workflow
+/utils/helpers/java/alfred-helpers/filesOutput
+alfred/workflows/alfred-font-awesome-workflow
