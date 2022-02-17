@@ -58,12 +58,7 @@ class Utils {
     }
 
     static getInstance() {
-        var instance;
-        if (Utils.constructor) {
-            instance = new Utils();
-            delete instance.constructor;
-        }
-        return instance;
+        return this._instance;
     }
 
     getFloatSumPx(...sizes) {
