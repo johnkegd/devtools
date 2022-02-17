@@ -1,5 +1,4 @@
 class Utils {
-
     constructor() {
         if (!Utils._instance) {
             Utils._instance = this;
@@ -29,11 +28,12 @@ class Utils {
         var absoluteHeight = this.getFloatSumPx(Object.values(sizesHeigth));
         var absoluteWidth = this.getFloatSumPx(Object.values(sizesWidth));
 
-        sizes.absoluteHeight = absoluteHeight;
-        sizes.absoluteWidth = absoluteWidth;
+        var sizes = {
+            absoluteHeight,absoluteWidth
+        }
         return {
-            absoluteHeight,
-            absoluteWidth,
+            absoluteHeight:sizes.absoluteHeight,
+            absoluteWidth:size.absoluteWidth,
             details: [
                 sizesHeigth, sizesWidth
             ],
@@ -58,7 +58,11 @@ class Utils {
     }
 
     static getInstance() {
-        return this._instance;
+        if(!this._instance) {
+            return new Utils();
+        }else {
+            return this._instance;
+        }
     }
 
     getFloatSumPx(...sizes) {
