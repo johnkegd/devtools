@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideImageChoice">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_imagechoice"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Image Choice Group"
+                    sling:hideProperties="jsonPostHandler"
+                    cssSelector=".guideFieldNode .guideCheckBoxGroupItems.guideImageChoice,.guideFieldNode .guideRadioButtonGroupItems.guideImageChoice"
+                    id="af_imagechoicewidgetandtext"
+                    longTitle="Image Choice Widget Group"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <ImageChoiceWidget
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Image Choice"
+                            cssSelector=".guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem,.guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem"
+                            id="af_imagechoicewidget"
+                            longTitle="Image Choice Widget"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideActiveField .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem,.guideActiveField .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem,[data-disabled='true'] .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem:hover,.guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem:hover"/>
+                                <checked
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Selected"
+                                    cssSelector=".guideImageChoice .guideRadioButtonItem.imageCheckButtonChecked .guideWidgetLabel, .guideImageChoice .guideCheckBoxItem.imageCheckButtonChecked .guideWidgetLabel "/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem,.validation-failure .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem,.validation-success .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice .guideCheckBoxItem,[data-mandatory='true'] .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice .guideRadioButtonItem"/>
+                            </states>
+                        </ImageChoiceWidget>
+                        <checkBoxItem
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideResource="true"/>
+                    </items>
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice,.guideActiveField .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice, [data-disabled='true'] .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".guideFieldNode .guideCheckBoxGroupItems.guideImageChoice:hover, .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice:hover"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice, .validation-failure .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice, .validation-success .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .guideFieldNode .guideCheckBoxGroupItems.guideImageChoice, [data-mandatory='true'] .guideFieldNode .guideRadioButtonGroupItems.guideImageChoice"/>
+                    </states>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

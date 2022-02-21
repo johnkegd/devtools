@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    title="Reducer Function Options">
+    <frequency
+        jcr:description="Frequency"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent frequency of unique value of other axis"
+        value="frequency"/>
+    <max
+        jcr:description="Maximum"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent maximum of all the values mapped against unique values of other axis"
+        value="max"/>
+    <mean
+        jcr:description="Mean (Average)"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent mean (average) of all the values mapped against unique values of other axis"
+        value="mean"/>
+    <median
+        jcr:description="Median"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent median (that is, value separating the higher half of a values from the lower half) of the values mapped against unique values of other axis"
+        value="median"/>
+    <min
+        jcr:description="Minimum"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent minimum of all the values mapped against unique values of other axis"
+        value="min"/>
+    <mode
+        jcr:description="Mode"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent mode (that is, value that appears most often) of the values mapped against unique values of other axis"
+        value="mode"/>
+    <range
+        jcr:description="Range"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent range (that is, the difference between maximum and minimum value) of the values mapped against unique values of other axis"
+        value="range"/>
+    <sum
+        jcr:description="Sum"
+        jcr:mixinTypes="[granite:FinalArea]"
+        jcr:primaryType="nt:unstructured"
+        guideComponentType="fd/af/reducer"
+        qtip="This axis value will represent sum of all the values mapped against unique values of other axis"
+        value="sum"/>
+</jcr:root>

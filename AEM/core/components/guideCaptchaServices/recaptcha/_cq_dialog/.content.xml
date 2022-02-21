@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit reCAPTCHA"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[af.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="reCAPTCHA"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <configuration
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                fieldLabel="Settings"
+                name="./rcCloudServicePath"
+                required="{Boolean}true">
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    af.listeners.change="guidelib.touchlib.editLayer.dialogUtils.loadRecaptchaSiteKey()"
+                    af.listeners.onload="guidelib.touchlib.editLayer.dialogUtils.loadRecaptchaSiteKey()"/>
+                <datasource
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="fd/af/components/commons/datasources/propertyprovider"
+                    rootPath="/etc/cloudservices/recaptcha"
+                    type="recaptchaCloudServiceConfiguration"/>
+            </configuration>
+            <sitekey
+                granite:hidden="{Boolean}true"
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}false"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                name="./rcSitekey"/>
+            <theme
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"
+                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                fieldLabel="Theme"
+                name="./rcTheme"
+                text="Theme">
+                <items jcr:primaryType="nt:unstructured">
+                    <light
+                        jcr:primaryType="nt:unstructured"
+                        text="Light"
+                        value="light"/>
+                    <dark
+                        jcr:primaryType="nt:unstructured"
+                        text="Dark"
+                        value="dark"/>
+                </items>
+            </theme>
+            <type
+                jcr:primaryType="nt:unstructured"
+                sling:hideResource="{Boolean}true"
+                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                fieldLabel="Type"
+                name="./rcType"
+                text="Type">
+                <items jcr:primaryType="nt:unstructured">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        checked="{Boolean}true"
+                        text="Image"
+                        value="image"/>
+                    <audio
+                        jcr:primaryType="nt:unstructured"
+                        text="Audio"
+                        value="audio"/>
+                </items>
+            </type>
+            <size
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                fieldLabel="Size"
+                name="./rcSize"
+                text="Captcha Size">
+                <items jcr:primaryType="nt:unstructured">
+                    <normal
+                        jcr:primaryType="nt:unstructured"
+                        checked="{Boolean}true"
+                        text="Normal"
+                        value="normal"/>
+                    <compact
+                        jcr:primaryType="nt:unstructured"
+                        text="Compact"
+                        value="compact"/>
+                </items>
+            </size>
+        </items>
+    </content>
+</jcr:root>

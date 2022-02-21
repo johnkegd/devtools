@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <properties
+                jcr:primaryType="cq:Panel"
+                border="false"
+                height=""
+                title="Panel layout"
+                width="">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <layout
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        disabled="false"
+                        fieldLabel="Panel layout"
+                        grow="false"
+                        hideLabel="false"
+                        name="./layout/sling:resourceType"
+                        optionsProvider="guidelib.author.GuideExtJSDialogUtils.loadPanelLayoutOptions"
+                        readOnly="false"
+                        selectOnFocus="false"
+                        type="select"
+                        xtype="selection">
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            loadcontent="function(){guidelib.author.GuideExtJSDialogUtils.showHideCompletion.apply(this, arguments);}"
+                            selectionchanged="function(){guidelib.author.GuideExtJSDialogUtils.showHideCompletion.apply(this, arguments);}"/>
+                    </layout>
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/panel/dialog/items/items/basicProps/items/name.infinity.json"
+                        xtype="cqinclude"/>
+                    <toolbarPosition
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/panel/dialog/items/items/basicProps/items/toolbarPosition.infinity.json"
+                        xtype="cqinclude"/>
+                    <columns
+                        jcr:primaryType="cq:Widget"
+                        disabled="false"
+                        editable="true"
+                        fieldLabel="Number of columns"
+                        grow="false"
+                        hideLabel="false"
+                        name="./layout/columns"
+                        readOnly="false"
+                        selected="1"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <v1
+                                jcr:primaryType="nt:unstructured"
+                                text="1"
+                                value="1"/>
+                            <v2
+                                jcr:primaryType="nt:unstructured"
+                                text="2"
+                                value="2"/>
+                            <v3
+                                jcr:primaryType="nt:unstructured"
+                                text="3"
+                                value="3"/>
+                            <v4
+                                jcr:primaryType="nt:unstructured"
+                                text="4"
+                                value="4"/>
+                            <v5
+                                jcr:primaryType="nt:unstructured"
+                                text="5"
+                                value="5"/>
+                            <v6
+                                jcr:primaryType="nt:unstructured"
+                                text="6"
+                                value="6"/>
+                        </options>
+                    </columns>
+                    <css
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/css.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </properties>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title=""
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <accordion
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <allowRichText
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <html5Type
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <multiLine
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <maxChars
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <richTextValue
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <autofillFieldKeyword
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <minLength
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <length
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                        </items>
+                    </basic>
+                    <patterns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <displayPatternGroup
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Display Pattern"
+                                sling:resourceType="fd/af/authoring/components/granite/form/fieldset"
+                                title="Display Pattern">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <displayPatternType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Type"
+                                        name="./displayPatternType">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="fd/af/components/commons/datasources/propertyprovider"
+                                            guideDataModel="basic"
+                                            guideNodeClass="guideTelephone"
+                                            type="formatters"/>
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            af.listeners.change="guidelib.touchlib.editLayer.dialogUtils.changePatternList('displayPattern', true);"/>
+                                    </displayPatternType>
+                                </items>
+                            </displayPatternGroup>
+                            <validationPatternGroup
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Validation Pattern"
+                                sling:resourceType="fd/af/authoring/components/granite/form/fieldset"
+                                title="Validation Pattern">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <sameAsDisplayPattern
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"/>
+                                    <validationPatternType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="If the pattern starts with ‘+’, then it will be considered to have country code and phone number, else it would be just considered to have phone number."
+                                        fieldLabel="Type"
+                                        name="./validationPatternType">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            af.listeners.change="guidelib.touchlib.editLayer.dialogUtils.changePatternList('validationPattern', true);"/>
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="fd/af/components/commons/datasources/propertyprovider"
+                                            guideDataModel="basic"
+                                            guideNodeClass="guideTelephone"
+                                            type="validators"/>
+                                    </validationPatternType>
+                                </items>
+                            </validationPatternGroup>
+                        </items>
+                    </patterns>
+                </items>
+            </accordion>
+        </items>
+    </content>
+</jcr:root>

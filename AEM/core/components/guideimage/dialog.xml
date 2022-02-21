@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[granite:InternalArea]"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}600"
+    title="Edit image"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <image
+                jcr:primaryType="cq:Widget"
+                cropParameter="./imageCrop"
+                ddGroups="[media]"
+                fileNameParameter="./fileName"
+                fileReferenceParameter="./fileReference"
+                height="400"
+                mapParameter="./imageMap"
+                name="./file"
+                requestSuffix=".img.png"
+                rotateParameter="./imageRotate"
+                title="Image"
+                xtype="html5smartimage"/>
+            <properties
+                jcr:primaryType="cq:Panel"
+                title="Title and text"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/name.infinity.json"
+                        xtype="cqinclude"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/foundation/components/form/defaults/items/title.infinity.json"
+                        xtype="cqinclude"/>
+                    <colspan
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/colspan.infinity.json"
+                        xtype="cqinclude"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/foundation/components/form/defaults/items/description.infinity.json"
+                        xtype="cqinclude"/>
+                    <alt
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Alternate text"
+                        name="./altText"
+                        xtype="textfield"/>
+                    <bindref
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Bind reference"
+                        hidden="true"
+                        name="./bindRef"
+                        xtype="textfield">
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            loadcontent="function(a) { guidelib.author.AuthorUtils.disableImagePanel.apply(this,arguments) }"/>
+                    </bindref>
+                </items>
+            </properties>
+            <script
+                jcr:primaryType="nt:unstructured"
+                labelWidth="{Long}160"
+                title="Script"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <ruleEditortext0
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/script/items/ruleEditortext0.infinity.json"
+                        xtype="cqinclude"/>
+                    <ruleEditortext1
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/script/items/ruleEditortext1.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </script>
+            <styling
+                jcr:primaryType="nt:unstructured"
+                autoWidth="{Boolean}true"
+                title="Styling">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <width
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/width.infinity.json"
+                        xtype="cqinclude"/>
+                    <height
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/height.infinity.json"
+                        xtype="cqinclude"/>
+                    <css
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/css.infinity.json"
+                        xtype="cqinclude"/>
+                    <inlineStyleLabel
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/inlineStyleLabel.infinity.json"
+                        xtype="cqinclude"/>
+                    <inlineStyleProperties
+                        jcr:primaryType="cq:Widget"
+                        name="guideStyle"
+                        xtype="tabpanel">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <fieldStyles
+                                jcr:primaryType="nt:unstructured"
+                                autoHeight="{Boolean}true"
+                                forceLayout="{Boolean}true"
+                                hideMode="offsets"
+                                labelWidth="{Long}160"
+                                title="Image"
+                                xtype="panel">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <inlinestyles
+                                        jcr:primaryType="cq:Widget"
+                                        hidden="{Boolean}true"
+                                        hideMode="offsets"
+                                        name="./inlineStyles"
+                                        xtype="multifield">
+                                        <fieldConfig
+                                            jcr:primaryType="nt:unstructured"
+                                            column="1"
+                                            xtype="textfield"/>
+                                    </inlinestyles>
+                                    <fieldProperties
+                                        jcr:primaryType="cq:Widget"
+                                        fieldLabel="Property"
+                                        hideLabel="{Boolean}true"
+                                        name="Field"
+                                        xtype="multifield">
+                                        <fieldConfig
+                                            jcr:primaryType="nt:unstructured"
+                                            column="2"
+                                            cssAttributes="[border-style,border-width,border-color,border-radius,                                                             padding,margin]"
+                                            xtype="guidestylemultifield"/>
+                                    </fieldProperties>
+                                </items>
+                            </fieldStyles>
+                        </items>
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            afterrender="function(){guidelib.author.AuthorUtils.setDialogConfigForStyleEditor.apply(this, arguments);}"/>
+                    </inlineStyleProperties>
+                    <inlineStyleDescription
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/inlineStyleDescription.infinity.json"
+                        xtype="cqinclude"/>
+                    <preview
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/preview.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </styling>
+            <excludeFromDor
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/dorSettings.infinity.json"
+                xtype="cqinclude"/>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        path="/libs/fd/af/components/guidefield/dialog/listeners.infinity.json"
+        xtype="cqinclude"/>
+</jcr:root>

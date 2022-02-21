@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:actions="[edit,-,copymove,delete,-,insert,-]"
+    cq:dialogMode="floating"
+    cq:disableTargeting="{Boolean}true"
+    jcr:primaryType="cq:EditConfig">
+    <cq:listeners
+        jcr:primaryType="cq:EditListenersConfig"
+        afterdelete="guidelib.author.editConfigListeners.REFRESH_PARENT_PANEL"
+        afteredit="guidelib.author.editConfigListeners.REFRESH_PARENT_PANEL"
+        afterinsert="guidelib.author.editConfigListeners.GUIDE_AFTER_INSERT"
+        aftermove="guidelib.author.editConfigListeners.REFRESH_GUIDE"/>
+    <cq:actionConfigs jcr:primaryType="nt:unstructured">
+        <replace
+            jcr:primaryType="nt:unstructured"
+            handler="guidelib.author.editConfigListeners.replaceGuideComponent"
+            text="Replace"/>
+        <merge
+            jcr:primaryType="nt:unstructured"
+            handler="guidelib.author.AuthorUtils.GuideTableEdit.mergeTableCell"
+            hidden="{Boolean}true"
+            text="Merge"/>
+        <split
+            jcr:primaryType="nt:unstructured"
+            handler="guidelib.author.AuthorUtils.GuideTableEdit.splitTableCell"
+            hidden="{Boolean}true"
+            text="Split Cells"/>
+    </cq:actionConfigs>
+</jcr:root>

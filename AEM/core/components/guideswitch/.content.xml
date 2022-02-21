@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:icon="switch"
+    jcr:description="Add a switch for users to toggle between two options."
+    jcr:primaryType="cq:Component"
+    jcr:title="Switch"
+    sling:resourceSuperType="fd/af/components/guidefield"
+    allowedParents="[*/parsys,*/*layout]"
+    componentGroup="Adaptive Form"/>

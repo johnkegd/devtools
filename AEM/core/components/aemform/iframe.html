@@ -1,0 +1,30 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ ADOBE CONFIDENTIAL
+  ~ ___________________
+  ~ Copyright 2015 Adobe Systems Incorporated
+  ~ All Rights Reserved.
+  ~
+  ~ NOTICE:  All information contained herein is, and remains
+  ~ the property of Adobe Systems Incorporated and its suppliers,
+  ~ if any.  The intellectual and technical concepts contained
+  ~ herein are proprietary to Adobe Systems Incorporated and its
+  ~ suppliers and are protected by all applicable intellectual property
+  ~ laws, including trade secret and copyright laws.
+  ~ Dissemination of this information or reproduction of this material
+  ~ is strictly forbidden unless prior written permission is obtained
+  ~ from Adobe Systems Incorporated.
+  */-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <sly data-sly-use.form="com.adobe.aemds.guide.common.AEMForm" />
+    <title data-sly-test="${form.isAdaptiveForm || form.isMCDocument}"><sly data-sly-use.af="com.adobe.aemds.guide.common.AdaptiveForm" />${af.formTitle @ context='html'}</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
+    <sly data-sly-test="${properties.useiframe != 'false' && form.height == 'auto'}" data-sly-call="${clientLib.all @ categories=['aemfd.afc.iframeContentResizer']}"/>
+</head>
+<body>
+<sly data-sly-include="formcontainer.html"></sly>
+</body>
+</html>

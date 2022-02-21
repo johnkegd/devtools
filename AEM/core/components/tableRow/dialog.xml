@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[granite:InternalArea]"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}600"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basicProps
+                jcr:primaryType="nt:unstructured"
+                border="false"
+                title="Table Row properties"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        allowBlank="{Boolean}false"
+                        fieldLabel="Element name"
+                        name="./name"
+                        regex="/^[a-zA-Z0-9_\\-]+$/"
+                        regexText="Element name should only contain characters, numbers, _ or -"
+                        xtype="textfield"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Title"
+                        name="./jcr:title"
+                        xtype="textfield"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Description"
+                        name="./jcr:description"
+                        xtype="textfield"/>
+                    <bindref
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/bindref.infinity.json"
+                        xtype="cqinclude"/>
+                    <ruleEditortext0
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/script/items/ruleEditortext0.infinity.json"
+                        xtype="cqinclude"/>
+                    <ruleEditortext1
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/script/items/ruleEditortext1.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </basicProps>
+            <repeat
+                jcr:primaryType="nt:unstructured"
+                title="Repeat settings"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <minOccur
+                        jcr:primaryType="cq:Widget"
+                        allowNegative="{Boolean}false"
+                        fieldLabel="Minimum count"
+                        name="./minOccur"
+                        regex="/^[^ @#$%-]+[1-9]*$/"
+                        xtype="numberfield"/>
+                    <maxOccur
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Maximum count"
+                        minValue="-1"
+                        name="./maxOccur"
+                        regex="/^[^ @#$%]+[1-9]*$/"
+                        xtype="numberfield"/>
+                </items>
+            </repeat>
+            <styling
+                jcr:primaryType="nt:unstructured"
+                autoWidth="{Boolean}true"
+                title="Styling"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <width
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/width.infinity.json"
+                        xtype="cqinclude"/>
+                    <height
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/height.infinity.json"
+                        xtype="cqinclude"/>
+                    <css
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/styling/items/css.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </styling>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        activate="function() {guidelib.author.editConfigListeners.launchExpressionEditor.apply(this);}"/>
+</jcr:root>

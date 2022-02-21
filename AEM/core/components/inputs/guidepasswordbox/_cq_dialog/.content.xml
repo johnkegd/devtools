@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title=""
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <accordion
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <submitPassword
+                                jcr:primaryType="nt:unstructured"
+                                sling:orderBefore="guideGlobalLazyField"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Include password in the data submission"
+                                name="./submitPassword"
+                                text="Include password in the data submission"
+                                value="true"/>
+                        </items>
+                    </basic>
+                    <help
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Help Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"/>
+                    <patterns
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"/>
+                    <accessibility jcr:primaryType="nt:unstructured"/>
+                </items>
+            </accordion>
+        </items>
+    </content>
+</jcr:root>

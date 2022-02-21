@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideTermandConditions">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_tnc"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Terms And Conditions"
+                    cssSelector=".guideFieldWidget.afTermsAndConditions"
+                    id="af_tncwidgetandtext"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideFieldWidget.afTermsAndConditions', options)"
+                    longTitle="Terms And Conditions Widget"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                    secondarySelectors="af_guideContainer:af_widgetAndText">
+                    <items jcr:primaryType="nt:unstructured">
+                        <tncContent
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Content"
+                            cssSelector=".afTncContentArea"
+                            id="af_tnccontent"
+                            longTitle="Terms And Conditions Content"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".afTncContentArea:hover"/>
+                            </states>
+                        </tncContent>
+                        <tncPopup
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Popup"
+                            cssSelector=".afTermsAndConditions .guide-modal-dialog"
+                            id="af_tncpopup"
+                            longTitle="Terms And Conditions Popup"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <items jcr:primaryType="nt:unstructured">
+                                <tncPopupHeader
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Header"
+                                    cssSelector=".afTermsAndConditions .guide-modal-header"
+                                    id="af_tncpopupheader"
+                                    longTitle="Terms And Conditions Popup Header"
+                                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <tncPopupTitle
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Title"
+                                            cssSelector=".afTermsAndConditions .guide-modal-header h3"
+                                            id="af_tncpopuptitle"
+                                            longTitle="Terms And Conditions Popup Title"
+                                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                            <states jcr:primaryType="nt:unstructured">
+                                                <hover
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Hover"
+                                                    cssSelector=".afTermsAndConditions .guide-modal-header h3:hover"/>
+                                            </states>
+                                        </tncPopupTitle>
+                                        <tncPopupClose
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Close Button"
+                                            cssSelector=".afTermsAndConditions .guide-modal-header .guide-close"
+                                            id="af_tncpopupclose"
+                                            longTitle="Terms And Conditions Popup Close Button"
+                                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                            <states jcr:primaryType="nt:unstructured">
+                                                <focus
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Focus"
+                                                    cssSelector=".afTermsAndConditions .guide-modal-header .guide-close:focus"/>
+                                                <hover
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Hover"
+                                                    cssSelector=".afTermsAndConditions .guide-modal-header .guide-close:hover"/>
+                                            </states>
+                                        </tncPopupClose>
+                                    </items>
+                                    <states jcr:primaryType="nt:unstructured">
+                                        <hover
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Hover"
+                                            cssSelector=".afTermsAndConditions .guide-modal-header:hover"/>
+                                    </states>
+                                </tncPopupHeader>
+                                <tncPopupContent
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Content"
+                                    cssSelector=".afTncContentArea.guide-modal-body"
+                                    id="af_tncpopupcontent"
+                                    longTitle="Terms And Conditions Popup Content"
+                                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                    <states jcr:primaryType="nt:unstructured">
+                                        <hover
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Hover"
+                                            cssSelector=".afTncContentArea.guide-modal-body:hover"/>
+                                    </states>
+                                </tncPopupContent>
+                            </items>
+                            <states jcr:primaryType="nt:unstructured">
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".afTermsAndConditions .guide-modal-dialog:hover"/>
+                            </states>
+                        </tncPopup>
+                        <tncConsentArea
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Consent Area"
+                            cssSelector=".guide-tnc-checkbox"
+                            id="af_tncconsentarea"
+                            longTitle="Terms And Conditions Consent Area"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <items jcr:primaryType="nt:unstructured">
+                                <tncCheckbox
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Checkbox"
+                                    cssSelector=".guide-tnc-checkboxwidget input[type='checkbox']"
+                                    id="af_tncconsentcheckbox"
+                                    longTitle="Terms And Conditions Checkbox"
+                                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                    <states jcr:primaryType="nt:unstructured">
+                                        <focus
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Focus"
+                                            cssSelector=".guide-tnc-checkboxwidget input[type='checkbox']:focus"/>
+                                        <hover
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Hover"
+                                            cssSelector=".guide-tnc-checkboxwidget input[type='checkbox']:hover"/>
+                                        <disabled
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Disabled"
+                                            cssSelector="\[data-disabled='true'] .guide-tnc-checkboxwidget input[type='checkbox']"/>
+                                        <checked
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Selected"
+                                            cssSelector=".guide-tnc-checkboxwidget input[type='checkbox']:checked"/>
+                                    </states>
+                                </tncCheckbox>
+                                <tncCheckBoxLabel
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Checkbox Label"
+                                    cssSelector=".guide-tnc-checkbox .guideWidgetLabel label"
+                                    id="af_tnccheckboxlabel"
+                                    longTitle="Terms And Conditions Checkbox Label"
+                                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                    <states jcr:primaryType="nt:unstructured">
+                                        <disabled
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Disabled"
+                                            cssSelector=".guide-tnc-checkbox.guide-tnc-checkbox-disabled .guideWidgetLabel label"/>
+                                        <hover
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Hover"
+                                            cssSelector=".guide-tnc-checkbox:not(.guide-tnc-checkbox-disabled) .guideWidgetLabel label:hover"/>
+                                        <checked
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Selected"
+                                            cssSelector=".guide-tnc-checkbox.guide-tnc-checkbox-reviewed:not(.guide-tnc-checkbox-disabled) .guideWidgetLabel label"/>
+                                        <error
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Error"
+                                            cssSelector=".validation-failure .guide-tnc-checkbox:not(.guide-tnc-checkbox-disabled) .guideWidgetLabel label"/>
+                                        <success
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Success"
+                                            cssSelector=".validation-success .guide-tnc-checkbox:not(.guide-tnc-checkbox-disabled) .guideWidgetLabel label"/>
+                                        <mandatory
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Mandatory"
+                                            cssSelector="\[data-mandatory='true'] .guide-tnc-checkbox:not(.guide-tnc-checkbox-disabled) .guideWidgetLabel label"/>
+                                    </states>
+                                </tncCheckBoxLabel>
+                            </items>
+                        </tncConsentArea>
+                    </items>
+                    <states
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"/>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

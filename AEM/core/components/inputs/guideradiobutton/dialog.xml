@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[granite:InternalArea]"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}600"
+    title="Edit radio button"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <title
+                jcr:primaryType="nt:unstructured"
+                title="Title"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/name.infinity.json"
+                        xtype="cqinclude"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/title.infinity.json"
+                        xtype="cqinclude"/>
+                    <colspan
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/colspan.infinity.json"
+                        xtype="cqinclude"/>
+                    <hideTitle
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/hideTitle.infinity.json"
+                        xtype="cqinclude"/>
+                    <required
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/required.infinity.json"
+                        xtype="cqinclude"/>
+                    <guideGlobalLazyField
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/guideGlobalLazyField.infinity.json"
+                        xtype="cqinclude"/>
+                    <mandatoryMessage
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/mandatoryMessage.infinity.json"
+                        xtype="cqinclude"/>
+                    <value
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidetextbox/dialog/items/items/title/items/value.infinity.json"
+                        xtype="cqinclude"/>
+                    <options
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidecheckbox/dialog/items/items/title/items/options.infinity.json"
+                        xtype="cqinclude"/>
+                    <alignment
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidecheckbox/dialog/items/items/title/items/alignment.infinity.json"
+                        xtype="cqinclude"/>
+                    <bindref
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/bindref.infinity.json"
+                        xtype="cqinclude"/>
+                    <validateExpMessage
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/validateExpMessage.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </title>
+            <script
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/script.infinity.json"
+                xtype="cqinclude"/>
+            <styling
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/styling.infinity.json"
+                xtype="cqinclude"/>
+            <help
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/help.infinity.json"
+                xtype="cqinclude"/>
+            <accessibility
+                jcr:primaryType="nt:unstructured"
+                title="Accessibility"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <assistPriority
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Screen reader precedence"
+                        name="./assistPriority"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <customText
+                                jcr:primaryType="nt:unstructured"
+                                text="Custom text"
+                                value="custom"/>
+                            <caption
+                                jcr:primaryType="nt:unstructured"
+                                text="Title"
+                                value="caption"/>
+                        </options>
+                    </assistPriority>
+                    <customText
+                        jcr:primaryType="nt:unstructured"
+                        anchor="92.6%"
+                        fieldLabel="Custom text"
+                        name="./custom"
+                        xtype="multifield"/>
+                </items>
+            </accessibility>
+            <excludeFromDor
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/dorSettings.infinity.json"
+                xtype="cqinclude"/>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        path="/libs/fd/af/components/guidefield/dialog/listeners.infinity.json"
+        xtype="cqinclude"/>
+</jcr:root>

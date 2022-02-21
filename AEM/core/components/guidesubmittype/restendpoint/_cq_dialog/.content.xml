@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit checkBox"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[af.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Email Action"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <options
+                jcr:mixinTypes="[granite:InternalArea]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="fd/af/authoring/components/granite/form/formsmultifield"
+                autoWidth="{Boolean}true"
+                fieldDescription="Enter values in {Field Name}={Parameter Name} format."
+                fieldLabel="Mapping for passing field values as Thank You Page request parameters"
+                typeHint="String[]">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    allowBlank="{Boolean}false"
+                    name="./fieldParameterMapping"/>
+            </options>
+            <enableRestEndpointPost
+                jcr:mixinTypes="[granite:InternalArea]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                name="./enableRestEndpointPost"
+                text="Enable POST request"
+                value="false">
+                <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    af.listeners.change="guidelib.touchlib.editLayer.dialogUtils.handleSubmitRESTEndpointPost();"
+                    af.listeners.onload="guidelib.touchlib.editLayer.dialogUtils.handleSubmitRESTEndpointPost();"/>
+            </enableRestEndpointPost>
+            <restEndpointPostUrl
+                jcr:mixinTypes="[granite:InternalArea]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Enter the URL of a remote server as (http://&lt;host>:&lt;port>/path/to/resource). For posting to the local AEM server that is serving the Form, enter the path to the resource."
+                fieldLabel="URL For POST request"
+                name="./restEndpointPostUrl"/>
+        </items>
+    </content>
+</jcr:root>

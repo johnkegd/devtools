@@ -1,0 +1,47 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ ADOBE CONFIDENTIAL
+  ~ ___________________
+  ~ Copyright 2015 Adobe Systems Incorporated
+  ~ All Rights Reserved.
+  ~
+  ~ NOTICE:  All information contained herein is, and remains
+  ~ the property of Adobe Systems Incorporated and its suppliers,
+  ~ if any.  The intellectual and technical concepts contained
+  ~ herein are proprietary to Adobe Systems Incorporated and its
+  ~ suppliers and are protected by all applicable intellectual property
+  ~ laws, including trade secret and copyright laws.
+  ~ Dissemination of this information or reproduction of this material
+  ~ is strictly forbidden unless prior written permission is obtained
+  ~ from Adobe Systems Incorporated.
+  */-->
+<sly data-sly-include="/libs/fd/af/components/guidesglobal.jsp"/>
+<sly data-sly-use.guideConstants="com.adobe.aemds.guide.utils.GuideConstants"/>
+<!--/* Based on the appearance type choose the correct Java Bean */-->
+<sly data-sly-use.guideField="GuideImageChoice" />
+<div class="${guideField.itemsClass} guideImageChoice"
+     style="${guideField.styles  @ context='styleString'};${guideField.widgetInlineStyles @ context='styleString'}">
+    <sly data-sly-list.option="${guideField.options}">
+        <div class="${guideField.itemClassName} ${guideField.name} ${guideField.alignment} ${guideField.cssClassName}" tabindex="0"
+                 style="background-image: url( ${request.contextPath  @ context='uri'}${guideField.options[option] @ context='uri'}); background-repeat: no-repeat; background-size: contain;" >
+<!--/**
+ * The HTML input or the widget control must be wrapped in a div having css class {guideConstants.GUIDE_FIELD_WIDGET}.
+ * The AF runtime searches for this div and passes that to the widget specified by data-af-widgetname
+ * or the OOTB widgets
+ */-->
+            <div class="${guideConstants.GUIDE_FIELD_WIDGET}"
+                 data-id="${optionList.count}"
+                 data-af-widgetname="imageCheckRadioButtonWidget">
+                <!--/* initialize imageCheckRadioButtonWidget. The widget will be passed the enclosing div
+                       .${guideConstants.GUIDE_FIELD_WIDGET}  */-->
+                <input type="${guideField.inputType}" id="${guideField.id}${'_'}${optionList.count}${'_widget'}"
+                       name="${guideField.name}" value="${option}"   />
+            </div>
+<!--/**
+ * Since we are hiding the checkbox/radio input to show the image, we need to pass through click of image to the input
+ * element. AF runtime provides one simple solution to have a element with class next to div element having class
+ * {guideConstants.GUIDE_FIELD_WIDGET}. The click event on that HTML element are passed to the input element.
+ */-->
+            <div class="${guideConstants.GUIDE_WIDGET_LABEL}"></div>
+        </div>
+    </sly>
+</div>

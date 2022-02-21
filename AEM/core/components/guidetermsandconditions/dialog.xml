@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[granite:InternalArea]"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}680"
+    title="Edit terms and conditions"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <title
+                jcr:primaryType="nt:unstructured"
+                labelWidth="{Long}160"
+                title="Title and text"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/name.infinity.json"
+                        xtype="cqinclude"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/title.infinity.json"
+                        xtype="cqinclude"/>
+                    <colspan
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/colspan.infinity.json"
+                        xtype="cqinclude"/>
+                    <hideTitle
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/hideTitle.infinity.json"
+                        xtype="cqinclude"/>
+                    <required
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Mandatory"
+                        name="./items/reviewStatus/mandatory"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <mandatoryMessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Message for mandatory field"
+                        name="./items/reviewStatus/mandatoryMessage"
+                        xtype="textarea"/>
+                    <tncCheckBoxContent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Consent text"
+                        name="./tncCheckBoxContent"
+                        xtype="textfield"/>
+                    <tncTextContent
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Content for terms and conditions"
+                        name="./tncTextContent"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </tncTextContent>
+                    <showApprovalOption
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show approval options"
+                        inputValue="{Boolean}true"
+                        name="./showApprovalOption"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <showAsPopUp
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show as a pop-up"
+                        inputValue="{Boolean}true"
+                        name="./showAsPopUp"
+                        type="checkbox"
+                        xtype="selection">
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            selectionchanged="function(){guidelib.author.GuideExtJSDialogUtils.disableEnableTnCApprovalOption.apply(this, arguments);}"/>
+                    </showAsPopUp>
+                    <showLink
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="If unchecked, the default rendition will be text content."
+                        fieldLabel="Show link for terms and conditions"
+                        inputValue="{Boolean}true"
+                        name="./showLink"
+                        type="checkbox"
+                        xtype="selection">
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            selectionchanged="function(){guidelib.author.GuideExtJSDialogUtils.disableEnableTnCLinkContent.apply(this, arguments);}"/>
+                    </showLink>
+                    <linkText
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="The format is [DisplayText=Link]."
+                        fieldLabel="Enter the display text with the link."
+                        hidden="true"
+                        name="./linkText"
+                        xtype="multifield"/>
+                    <bindref
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/bindref.infinity.json"
+                        xtype="cqinclude"/>
+                    <validateExpMessage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="This message will be displayed when the field value breaks the validation rule"
+                        fieldLabel="Script validation message"
+                        name="./items/reviewStatus/validateExpMessage"
+                        xtype="textfield"/>
+                </items>
+            </title>
+            <script
+                jcr:primaryType="nt:unstructured"
+                labelWidth="{Long}160"
+                title="Script"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <ruleEditortext0
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/script/items/ruleEditortext0.infinity.json"
+                        xtype="cqinclude"/>
+                    <ruleEditortext1
+                        jcr:primaryType="cq:Widget"
+                        path="/libs/fd/af/components/guidefield/dialog/items/script/items/ruleEditortext1.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </script>
+            <styling
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/styling.infinity.json"
+                xtype="cqinclude"/>
+            <help
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/help.infinity.json"
+                xtype="cqinclude"/>
+            <accessiblity
+                jcr:primaryType="nt:unstructured"
+                title="Accessibility"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <assistPriority
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="custom"
+                        fieldLabel="Screen Reader Precedence"
+                        name="./assistPriority"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <customText
+                                jcr:primaryType="nt:unstructured"
+                                path="/libs/fd/af/components/guidefield/dialog/items/accessiblity/items/assistPriority/options/customText.infinity.json"
+                                xtype="cqinclude"/>
+                            <caption
+                                jcr:primaryType="nt:unstructured"
+                                path="/libs/fd/af/components/guidefield/dialog/items/accessiblity/items/assistPriority/options/caption.infinity.json"
+                                xtype="cqinclude"/>
+                        </options>
+                    </assistPriority>
+                    <customTextLabel
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/accessiblity/items/customTextLabel.infinity.json"
+                        xtype="cqinclude"/>
+                    <customText
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/accessiblity/items/customText.infinity.json"
+                        xtype="cqinclude"/>
+                </items>
+            </accessiblity>
+            <excludeFromDor
+                jcr:primaryType="nt:unstructured"
+                path="/libs/fd/af/components/guidefield/dialog/items/dorSettings.infinity.json"
+                xtype="cqinclude"/>
+        </items>
+    </items>
+    <listeners
+        jcr:primaryType="nt:unstructured"
+        path="/libs/fd/af/components/guidefield/dialog/listeners.infinity.json"
+        xtype="cqinclude"/>
+</jcr:root>

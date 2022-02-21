@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideField">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_radiobutton"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Radio Button Group"
+                    sling:hideProperties="jsonPostHandler"
+                    cssSelector=".guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch)"
+                    id="af_radiobuttonwidgetandtext"
+                    longTitle="Radio Button Group Widget"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <radioButtonItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Radio Button Item"
+                            cssSelector=".afRadioButtonItem"
+                            id="af_radiobuttonitem"
+                            longTitle="Radio Button Item"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <items jcr:primaryType="nt:unstructured">
+                                <radioButtonLabel
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Label"
+                                    cssSelector=".afRadioButtonItem .guideWidgetLabel label"
+                                    id="af_radiobuttonitemlabel"
+                                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideRadioButtonItem .guideWidgetLabel', options)"
+                                    longTitle="Radio Button Label"
+                                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                                    <states jcr:primaryType="nt:unstructured">
+                                        <disabled
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Disabled"
+                                            cssSelector="\[data-disabled='true'] .afRadioButtonItem .guideWidgetLabel label"/>
+                                        <hover
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Hover"
+                                            cssSelector=".afRadioButtonItem .guideWidgetLabel label:hover"/>
+                                        <checked
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Selected"
+                                            cssSelector=".guideItemSelected.afRadioButtonItem .guideWidgetLabel label"/>
+                                        <error
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Error"
+                                            cssSelector=".validation-failure .afRadioButtonItem .guideWidgetLabel label"/>
+                                        <success
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Success"
+                                            cssSelector=".validation-success .afRadioButtonItem .guideWidgetLabel label"/>
+                                        <mandatory
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Mandatory"
+                                            cssSelector="\[data-mandatory='true'] .afRadioButtonItem .guideWidgetLabel label"/>
+                                    </states>
+                                </radioButtonLabel>
+                                <radioButtonWidgetAndText
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Radio Button"
+                                    cssSelector=".XfaCheckBox input[type='radio']"
+                                    id="af_radiobuttonwidget"
+                                    longTitle="Radio Button Widget"
+                                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                                    secondarySelectors="af_guideContainer:af_widgetAndText">
+                                    <states jcr:primaryType="nt:unstructured">
+                                        <focus
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Focus"
+                                            cssSelector=".XfaCheckBox input[type='radio']:focus"/>
+                                        <disabled
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Disabled"
+                                            cssSelector="\[data-disabled='true'] .XfaCheckBox input[type='radio']"/>
+                                        <hover
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Hover"
+                                            cssSelector=".XfaCheckBox input[type='radio']:hover"/>
+                                        <checked
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Selected"
+                                            cssSelector=".XfaCheckBox input[type='radio']:checked"/>
+                                        <error
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Error"
+                                            cssSelector=".validation-failure .XfaCheckBox input[type='radio']"/>
+                                        <success
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Success"
+                                            cssSelector=".validation-success .XfaCheckBox input[type='radio']"/>
+                                        <mandatory
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Mandatory"
+                                            cssSelector="\[data-mandatory='true'] .XfaCheckBox input[type='radio']"/>
+                                    </states>
+                                </radioButtonWidgetAndText>
+                            </items>
+                            <states jcr:primaryType="nt:unstructured">
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .afRadioButtonItem"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".afRadioButtonItem:hover"/>
+                                <checked
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Selected"
+                                    cssSelector=".guideItemSelected.afRadioButtonItem"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .afRadioButtonItem"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .afRadioButtonItem"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .afRadioButtonItem"/>
+                            </states>
+                        </radioButtonItem>
+                    </items>
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField .guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch)"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] .guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch)"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch):hover"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch)"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch)"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .guideRadioButtonGroupItems:not(.guideImageChoice):not(.guideSwitch)"/>
+                    </states>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

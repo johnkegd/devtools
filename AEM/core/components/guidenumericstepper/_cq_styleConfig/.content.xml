@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideNumericStepper">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_numericstepper"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Numeric Stepper"
+                    cssSelector=".guideFieldWidget.guideNumericStepper"
+                    id="af_numericstepperwidgetandtext"
+                    longTitle="Numeric Stepper Widget"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                    secondarySelectors="af_guideContainer:af_widgetAndText">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField .guideFieldWidget.guideNumericStepper"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] .guideFieldWidget.guideNumericStepper"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .guideFieldWidget.guideNumericStepper"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .guideFieldWidget.guideNumericStepper"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .guideFieldWidget.guideNumericStepper"/>
+                    </states>
+                    <items jcr:primaryType="nt:unstructured">
+                        <stepperInput
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Input"
+                            cssSelector=".guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input"
+                            id="af_numericstepperinput"
+                            longTitle="Stepper Input"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input:focus"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input:hover"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideFieldWidget.guideNumericStepper input[type='text'].ui-spinner-input"/>
+                            </states>
+                        </stepperInput>
+                        <incrementButton
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Increment Button"
+                            cssSelector=".guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up "
+                            id="af_numericstepperincrementbutton"
+                            longTitle="Increment Button"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up:focus"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up:hover"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-up"/>
+                            </states>
+                        </incrementButton>
+                        <decrementButton
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Decrement Button"
+                            cssSelector=".guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down"
+                            id="af_numericstepperdecrementbutton"
+                            longTitle="Decrement Button"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down:focus"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down:hover"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideFieldWidget.guideNumericStepper a.ui-spinner-button.ui-spinner-down"/>
+                            </states>
+                        </decrementButton>
+                    </items>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

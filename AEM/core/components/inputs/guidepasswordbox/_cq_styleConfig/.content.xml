@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guidePasswordBox">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_passwordbox"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Password Box"
+                    cssSelector=".defaultWidget input[type='password']"
+                    id="af_passwordboxwidgetandtext"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideFieldWidget.defaultWidget', options)"
+                    longTitle="Password Box Widget"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                    secondarySelectors="af_guideContainer:af_widgetAndText">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".defaultWidget input[type='password']:focus"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] .defaultWidget input[type='password']"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".defaultWidget input[type='password']:hover"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .defaultWidget input[type='password']"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .defaultWidget input[type='password']"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .defaultWidget input[type='password']"/>
+                    </states>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

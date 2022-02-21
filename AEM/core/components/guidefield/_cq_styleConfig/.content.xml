@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideField">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            cssSelector=".guideFieldNode:not(.guideButton):not(.guideTextDraw):not(.guideChart)"
+            id="af_field"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Widget and Text"
+                    cssSelector="input,select,textarea,.guideScribble img,.afTermsAndConditions"
+                    id="af_fieldwidgetandtext"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideFieldWidget:not(.guideFieldButtonWidget)', options)"
+                    longTitle="Field Widget and Text"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector="input:focus,select:focus,textarea:focus,.guideScribble img:focus"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="input:disabled,select:disabled,textarea:disabled,.guideScribble img:disabled, [data-disabled='true'] input, [data-disabled='true'] select, [data-disabled='true'] textarea, [data-disabled='true'] .guideScribble img"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector="input:hover,select:hover,textarea:hover,.guideScribble img:hover"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure input,.validation-failure select,.validation-failure textarea,.validation-failure.guideScribble img"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success input,.validation-success select,.validation-success textarea,.validation-success.guideScribble img"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] input,[data-mandatory='true'] select,[data-mandatory='true'] textarea,[data-mandatory='true'].guideScribble img"/>
+                    </states>
+                </widgetAndText>
+                <fieldLabel
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Label"
+                    cssSelector="label"
+                    id="af_fieldlabel"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideFieldLabel', options)"
+                    longTitle="Field Label"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField label"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector="label:hover"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] label"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure label"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success label"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] label"/>
+                    </states>
+                </fieldLabel>
+                <fieldDescriptionShort
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Short Description"
+                    cssSelector=".guideFieldDescription.short"
+                    id="af_fielddescriptionshort"
+                    longTitle="Field Short Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField .guideFieldDescription.short"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure guideFieldDescription.short"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success guideFieldDescription.short"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] guideFieldDescription.short"/>
+                    </states>
+                </fieldDescriptionShort>
+                <fieldDescriptionLong
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Long Description"
+                    cssSelector=".guideFieldDescription.long"
+                    id="af_fielddescriptionlong"
+                    longTitle="Field Long Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField .guideFieldDescription.long"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .guideFieldDescription.long"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .guideFieldDescription.long"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .guideFieldDescription.long"/>
+                    </states>
+                </fieldDescriptionLong>
+                <fieldHelpIcon
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Field Help Icon"
+                    cssSelector=".guideFieldNode .guideHelpQuestionMark"
+                    id="af_fieldhelpicon"
+                    longTitle="Field Help Icon"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                    secondarySelectors="af_guideContainer:af_helpicon">
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideActiveField .guideHelpQuestionMark:focus"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".guideFieldNode .guideHelpQuestionMark:hover"/>
+                    </states>
+                </fieldHelpIcon>
+                <errorMessage
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Error Message"
+                    cssSelector=".guideFieldError"
+                    id="af_fielderrormessage"
+                    longTitle="Field Error Message"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+            </items>
+            <states jcr:primaryType="nt:unstructured">
+                <focus
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Focus"
+                    cssSelector=".guideFieldNode.guideActiveField:not(.guideButton):not(.guideTextDraw):not(.guideChart)"/>
+                <hover
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hover"
+                    cssSelector=".guideFieldNode:not(.guideButton):not(.guideTextDraw):not(.guideChart):hover"/>
+                <disabled
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Disabled"
+                    cssSelector="\[data-disabled='true'].guideFieldNode:not(.guideButton):not(.guideTextDraw):not(.guideChart)"/>
+                <error
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Error"
+                    cssSelector=".guideFieldNode.validation-failure:not(.guideButton):not(.guideTextDraw):not(.guideChart)"/>
+                <success
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Success"
+                    cssSelector=".guideFieldNode.validation-success:not(.guideButton):not(.guideTextDraw):not(.guideChart)"/>
+                <mandatory
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Mandatory"
+                    cssSelector="\[data-mandatory='true'].guideFieldNode:not(.guideButton):not(.guideTextDraw):not(.guideChart)"/>
+            </states>
+        </field>
+    </items>
+</jcr:root>

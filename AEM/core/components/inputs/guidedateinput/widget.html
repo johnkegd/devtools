@@ -1,0 +1,41 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ ADOBE CONFIDENTIAL
+~ ___________________
+~ Copyright 2015 Adobe Systems Incorporated
+~ All Rights Reserved.
+~
+~ NOTICE:  All information contained herein is, and remains
+~ the property of Adobe Systems Incorporated and its suppliers,
+~ if any.  The intellectual and technical concepts contained
+~ herein are proprietary to Adobe Systems Incorporated and its
+~ suppliers and are protected by all applicable intellectual property
+~ laws, including trade secret and copyright laws.
+~ Dissemination of this information or reproduction of this material
+~ is strictly forbidden unless prior written permission is obtained
+~ from Adobe Systems Incorporated.
+*/-->
+<sly data-sly-include="/libs/fd/af/components/guidesglobal.jsp"/>
+<sly data-sly-use.guideConstants="com.adobe.aemds.guide.utils.GuideConstants"/>
+<sly data-sly-use.guideField="com.adobe.aemds.guide.common.GuideDatePicker"/>
+<div class="${guideConstants.GUIDE_FIELD_WIDGET} guideDateInputWidget ${guideField.heightOfDiv}"
+     id="${guideField.id}${'_widget'}"
+     role="${'group'}"
+     name="${guideField.name}"
+     value="${guideField.value}"
+     style="${guideField.widgetInlineStyles}"
+     data-af-widgetname="dateInputWidget"
+     data-af-widgetoptions='${guideField.dateInputOptions}'
+     data-af-widgetoption-dateFormat="${properties.dateDisplayFormat || 'date{M/D/YYYY}'}">
+        <div data-dateInput-wrapper>
+           <label data-dateInput-label></label>
+           <input type="text" value="" aria-describedby="${guideField.labelForId}_desc">
+        </div>
+        <div data-dateInput-wrapper>
+           <label data-dateInput-label></label>
+           <input type="text" value="" aria-describedby="${guideField.labelForId}_desc">
+        </div>
+        <div data-dateInput-wrapper>
+           <label data-dateInput-label></label>
+           <input type="text" value="" aria-describedby="${guideField.labelForId}_desc">
+        </div>
+</div>

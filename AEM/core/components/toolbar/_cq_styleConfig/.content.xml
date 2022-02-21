@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="toolbar">
+    <items jcr:primaryType="nt:unstructured">
+        <toolbar
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Toolbar"
+            cssSelector=".guideToolbarNode"
+            id="af_toolbar"
+            longTitle="Toolbar"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <button
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Button"
+                    cssSelector=".afToolbarButton .guidebutton button:not(.af-icon-button)"
+                    id="af_toolbarbutton"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.buttonPostHandler(' .afToolbarButton', options)"
+                    longTitle="Toolbar Button"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                    secondarySelectors="af_guideContainer:af_savebutton,af_guideContainer:af_submitbutton,af_guideContainer:af_nextitemnavbutton,af_guideContainer:af_previtemnavbutton,af_guideContainer:af_resetbutton,af_guideContainer:af_attachmentlistingbutton,af_guideContainer:af_button">
+                    <items jcr:primaryType="nt:unstructured">
+                        <buttonText
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Button Text"
+                            cssSelector=".afToolbarButton .guidebutton button .iconButton-label"
+                            id="af_toolbarbuttontext"
+                            longTitle="Toolbar Button Text"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            secondarySelectors="af_guideContainer:af_savebuttontext,af_guideContainer:af_submitbuttontext,af_guideContainer:af_nextitemnavbuttontext,af_guideContainer:af_previtemnavbuttontext,af_guideContainer:af_resetbuttontext,af_guideContainer:af_attachmentlistingbuttontext,af_guideContainer:af_buttontext"/>
+                        <buttonIcon
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Button Icon"
+                            cssSelector=".afToolbarButton .guidebutton button .iconButton-icon"
+                            id="af_toolbarbuttonicon"
+                            longTitle="Toolbar Button Icon"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            secondarySelectors="af_guideContainer:af_savebuttonicon,af_guideContainer:af_submitbuttonicon,af_guideContainer:af_nextitemnavbuttonicon,af_guideContainer:af_previtemnavbuttonicon,af_guideContainer:af_resetbuttonicon,af_guideContainer:af_attachmentlistingbuttonicon,af_guideContainer:af_buttonicon"/>
+                    </items>
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".afToolbarButton .guidebutton button:not(.af-icon-button):focus"/>
+                        <active
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Down"
+                            cssSelector=".afToolbarButton .guidebutton button:not(.af-icon-button):active"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector=".afToolbarButton .guidebutton [data-disabled='true'] button:not(.af-icon-button)"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".afToolbarButton .guidebutton button:not(.af-icon-button):hover"/>
+                    </states>
+                </button>
+            </items>
+        </toolbar>
+    </items>
+</jcr:root>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title=""
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <accordion
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <bindref
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <enabled
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <enabled-typehint
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <repeatSettings
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <minOccur
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <maxOccur
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <colspan
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                        </items>
+                    </basic>
+                    <dor
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Document of Record"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <excludeFromDor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                path="fd/af/components/guidefield/cq:dialog/content/items/accordion/items/dor/items/excludeFromDor"
+                                text="Exclude from Document of Record"
+                                value="true"/>
+                            <dorExcludeTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <dorExcludeDescription
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"/>
+                            <dorPagination
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pagination"
+                                sling:resourceType="fd/af/authoring/components/granite/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <breakBefore
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="fd/af/granite/components/paginationpicker"
+                                        emptyText="Following Previous"
+                                        fieldDescription="Specifies where the panel is to be placed."
+                                        fieldLabel="Place"
+                                        name="./breakBeforeText"
+                                        type="beforeBreakPaginationType"/>
+                                    <breakAfter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="fd/af/granite/components/paginationpicker"
+                                        emptyText="Continue Filling Parent"
+                                        fieldDescription="Specifies which area to fill after the panel is placed."
+                                        fieldLabel="After"
+                                        name="./breakAfterText"
+                                        type="afterBreakPaginationType"/>
+                                </items>
+                            </dorPagination>
+                        </items>
+                        <granite:rendercondition
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="fd/af/dor/rendercondition/tab"/>
+                    </dor>
+                </items>
+            </accordion>
+        </items>
+    </content>
+</jcr:root>

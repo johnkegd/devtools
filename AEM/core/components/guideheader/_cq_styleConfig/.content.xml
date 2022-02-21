@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideheader">
+    <items jcr:primaryType="nt:unstructured">
+        <header
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Header"
+            cssSelector=".afHeader"
+            id="af_header"
+            longTitle="Header"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <logoImage
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Logo"
+                    cssSelector=".guideimage .logoImage img"
+                    id="af_headerlogo"
+                    longTitle="Header Logo"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".guideimage .logoImage img:hover"/>
+                    </states>
+                </logoImage>
+                <headerText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Text"
+                    cssSelector=".guideTextDraw.headerText"
+                    id="af_headertext"
+                    longTitle="Header Text"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".headerText:hover"/>
+                    </states>
+                </headerText>
+            </items>
+            <states jcr:primaryType="nt:unstructured">
+                <hover
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hover"
+                    cssSelector=".afHeader:hover"/>
+            </states>
+        </header>
+    </items>
+</jcr:root>

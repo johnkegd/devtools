@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="panel">
+    <items jcr:primaryType="nt:unstructured">
+        <responsivePanel
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Responsive"
+            cssSelector=".guideGridFluidLayout"
+            id="af_responsivepanel"
+            longTitle="Responsive Panel Container"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <responsivePanelTitle
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Description"
+                    cssSelector=".guideGridFluidDescription.guidePanelDescription"
+                    id="af_responsivepaneldescription"
+                    longTitle="Responsive Panel Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+            </items>
+        </responsivePanel>
+        <accordionPanel
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Accordion"
+            cssSelector=".guideAccordionLayout"
+            id="af_accordionpanel"
+            longTitle="Accordion Panel Container"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <accordionBar
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Header"
+                    cssSelector=".accordion-navigators .guideHeader > a"
+                    id="af_accordionpanelheader"
+                    longTitle="Accordion Header Bar"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <states jcr:primaryType="nt:unstructured">
+                        <active
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Active"
+                            cssSelector=".accordion-navigators .active > .guideHeader > a, .accordion-navigators .active .guideHeader > a:hover"/>
+                        <stepped
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Visited"
+                            cssSelector=".accordion-navigators .stepped .guideHeader > a"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".accordion-navigators .guideHeader > a:hover"/>
+                    </states>
+                    <items jcr:primaryType="nt:unstructured">
+                        <accordionPanelTitle
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            cssSelector=".accordion-navigators .guideHeader .guideSummary"
+                            id="af_accordionpaneltitle"
+                            longTitle="Accordion Panel Title"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".accordion-navigators .active > .guideHeader .guideSummary, .accordion-navigators .active > .guideHeader .guideSummary:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".accordion-navigators .stepped .guideHeader .guideSummary"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".accordion-navigators .guideHeader .guideSummary:hover"/>
+                            </states>
+                        </accordionPanelTitle>
+                        <accordionPanelAddButton
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Add Button"
+                            cssSelector=".accordion-navigators .guideHeader .repeatableButtons button.Add"
+                            id="af_accordionpaneladdbutton"
+                            longTitle="Accordion Panel Add Button"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Down"
+                                    cssSelector=".accordion-navigators .active > .guideHeader .repeatableButtons > button.Add"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".accordion-navigators .guideHeader .repeatableButtons > button.Add:hover"/>
+                            </states>
+                        </accordionPanelAddButton>
+                        <accordionPanelRemoveButton
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Remove Button"
+                            cssSelector=".accordion-navigators .guideHeader .repeatableButtons button.Remove"
+                            id="af_accordionpanelremovebutton"
+                            longTitle="Accordion Panel Remove Button"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Down"
+                                    cssSelector=".accordion-navigators .active > .guideHeader .repeatableButtons > button.Remove"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".accordion-navigators .guideHeader .repeatableButtons button.Remove:hover"/>
+                            </states>
+                        </accordionPanelRemoveButton>
+                    </items>
+                </accordionBar>
+                <accordionPanelDescription
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Description"
+                    cssSelector=".guideAccordionDescription.guidePanelDescription"
+                    id="af_accordionpaneldescription"
+                    longTitle="Accordion Panel Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+                <contentArea
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Area"
+                    cssSelector=".afAccordionPanel"
+                    id="af_accordionpanelcontentarea"
+                    longTitle="Accordion Content Area"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+            </items>
+        </accordionPanel>
+        <tabsOnLeftPanel
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Tabs on Left"
+            cssSelector=".guideTabbedPanelLayout"
+            id="af_tabsonleft"
+            longTitle="Tabs on Left Panel Container"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <tabbedPanelNavigationGroup1
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tab Navigation Group - Level 1"
+                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical"
+                    id="af_tabsonleftnavgrp1"
+                    longTitle="Tabs on Left Panel Navigation Group - Level 1"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <tabbedPanelNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li > a.guideLeftNavIcon"
+                            id="af_tabsonleftnavgrp1title"
+                            longTitle="Tabs on Left Navigation Group Title - Level 1"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            variant="quiet">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li.active > a.guideLeftNavIcon, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li.active.stepped > a.guideLeftNavIcon, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li.active > a.guideLeftNavIcon:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li.stepped > a.guideLeftNavIcon"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li > a.guideLeftNavIcon:hover, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical > li.stepped > a.guideLeftNavIcon:hover"/>
+                            </states>
+                        </tabbedPanelNavigationItem>
+                    </items>
+                </tabbedPanelNavigationGroup1>
+                <tabbedPanelNavigationGroup2
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tab Navigation Group - Level 2"
+                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical"
+                    id="af_tabsonleftnavgrp2"
+                    longTitle="Tabs on Left Panel Navigation Group - Level 2"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <tabbedPanelNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li > a.guideLeftNavIcon"
+                            id="af_tabsonleftnavgrp2title"
+                            longTitle="Tabs on Left Navigation Group Title - Level 2"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            variant="quiet">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li.active > a.guideLeftNavIcon, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li.active.stepped > a.guideLeftNavIcon, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li.active > a.guideLeftNavIcon:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li.stepped > a.guideLeftNavIcon"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li > a.guideLeftNavIcon:hover, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical > li.stepped > a.guideLeftNavIcon:hover"/>
+                            </states>
+                        </tabbedPanelNavigationItem>
+                    </items>
+                </tabbedPanelNavigationGroup2>
+                <tabbedPanelNavigationGroup3
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tab Navigation Group - Level 3"
+                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical"
+                    id="af_tabsonleftnavgrp3"
+                    longTitle="Tabs on Left Panel Navigation Group - Level 3"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <tabbedPanelNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li > a.guideLeftNavIcon"
+                            id="af_tabsonleftnavgrp3title"
+                            longTitle="Tabs on Left Navigation Group Title - Level 3"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            variant="quiet">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li.active > a.guideLeftNavIcon, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li.active.stepped > a.guideLeftNavIcon, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li.active > a.guideLeftNavIcon:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li.stepped > a.guideLeftNavIcon"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li > a.guideLeftNavIcon:hover, .guideTabbedPanelLayout .tab-navigators.tab-navigators-vertical .tab-navigators-vertical .tab-navigators-vertical > li.stepped > a.guideLeftNavIcon:hover"/>
+                            </states>
+                        </tabbedPanelNavigationItem>
+                    </items>
+                </tabbedPanelNavigationGroup3>
+                <tabsOnLeftPanelDescription
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Description"
+                    cssSelector=".guideTabbedDescription.guidePanelDescription"
+                    id="af_tabsonleftdescription"
+                    longTitle="Tabs on Left Panel Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+                <contentArea
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Area"
+                    cssSelector=".afTabLeftPanel"
+                    id="af_tabsonleftcontentarea"
+                    longTitle="Tabs on Left Content Area"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+            </items>
+        </tabsOnLeftPanel>
+        <tabsOnTopPanel
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Tabs on Top"
+            cssSelector=".guideLayout.guideVerticalTabbedPanelLayout"
+            id="af_tabsontop"
+            longTitle="Tabs on Top Panel Container"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <verticalTabbedPanelNavigationGroup
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tab Navigation Group - Level 1"
+                    cssSelector=".guideVerticalTabbedPanelLayout .tab-navigators"
+                    id="af_tabsontopnavgrp1"
+                    longTitle="Tabs on Top Panel Navigation Group - Level 1"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <verticalTabbedPanelNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            cssSelector=".guideVerticalTabbedPanelLayout .tab-navigators > li > a.guideTopNavIcon"
+                            id="af_tabsontopnavgrp1title"
+                            longTitle="Tabs on Top Navigation Group Title - Level 1"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            variant="quiet">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .tab-navigators > li.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .tab-navigators-vertical .tab-navigators-vertical li.active > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .tab-navigators > li.stepped.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .tab-navigators-vertical .tab-navigators-vertical li.stepped.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .tab-navigators > li.active > a.guideTopNavIcon:hover, .guideVerticalTabbedPanelLayout .tab-navigators-vertical .tab-navigators-vertical li.active > a.guideTopNavIcon:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .tab-navigators > li.stepped > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .tab-navigators-vertical .tab-navigators-vertical li.stepped > a.guideTopNavIcon"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .tab-navigators > li > a.guideTopNavIcon:hover"/>
+                            </states>
+                        </verticalTabbedPanelNavigationItem>
+                    </items>
+                </verticalTabbedPanelNavigationGroup>
+                <verticalTabbedPanelNavigationGroup2
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tab Navigation Group - Level 2"
+                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators"
+                    id="af_tabsontopnavgrp2"
+                    longTitle="Tabs on Top Panel Navigation Group - Level 2"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <verticalTabbedPanelNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators > li > a.guideTopNavIcon"
+                            id="af_tabsontopnavgrp2title"
+                            longTitle="Tabs on Top Navigation Group Title - Level 2"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            variant="quiet">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators > li.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.active > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators > li.stepped.active > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.stepped.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators > li.active > a.guideTopNavIcon:hover, .guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.active > a.guideTopNavIcon:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators > li.stepped > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.stepped > a.guideTopNavIcon"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .tab-navigators > li > a.guideTopNavIcon:hover"/>
+                            </states>
+                        </verticalTabbedPanelNavigationItem>
+                    </items>
+                </verticalTabbedPanelNavigationGroup2>
+                <verticalTabbedPanelNavigationGroup3
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Tab Navigation Group - Level 3"
+                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators"
+                    id="af_tabsontopnavgrp3"
+                    longTitle="Tabs on Top Panel Navigation Group - Level 3"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <verticalTabbedPanelNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators > li > a.guideTopNavIcon"
+                            id="af_tabsontopnavgrp3title"
+                            longTitle="Tabs on Top Navigation Group Title - Level 3"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                            variant="quiet">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators > li.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.active > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators > li.stepped.active > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.stepped.active > a.guideTopNavIcon, .guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators > li.active > a.guideTopNavIcon:hover, .guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.active > a.guideTopNavIcon:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators > li.stepped > a.guideTopNavIcon,.guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators-vertical .tab-navigators-vertical li.stepped > a.guideTopNavIcon"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideVerticalTabbedPanelLayout .afTabTopPanelContent .afTabTopPanelContent .tab-navigators > li > a.guideTopNavIcon:hover"/>
+                            </states>
+                        </verticalTabbedPanelNavigationItem>
+                    </items>
+                </verticalTabbedPanelNavigationGroup3>
+                <tabsOnTopPanelDescription
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Description"
+                    cssSelector=".guideVerticalTabbedDescription.guidePanelDescription"
+                    id="af_tabsontopdescription"
+                    longTitle="Tabs on Top Panel Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+                <contentArea
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Area"
+                    cssSelector=".afTabTopPanel"
+                    id="af_tabsontopcontentarea"
+                    longTitle="Tabs on Top Content Area"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+            </items>
+        </tabsOnTopPanel>
+        <wizardPanel
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Wizard"
+            cssSelector=".guideWizardLayout"
+            id="af_wizard"
+            longTitle="Wizard Panel Container"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <wizardPanelNavigationGroup
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Wizard Navigation Group"
+                    cssSelector=".wizard-navigators"
+                    id="af_wizardnavgrp"
+                    longTitle="Wizard Panel Navigation Group"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <wizardNavigationItem
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Title"
+                            cssSelector=".wizard-navigators > li > a"
+                            id="af_wizardnavitemtitle"
+                            jsonPostHandler="window.guidelib.touchlib.style.utils.wizardNavigationTitlePostHandler(' .wizard-navigators > li.af-widget-itemnav', options)"
+                            longTitle="Wizard Navigation Item Title"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".wizard-navigators > li.active > a, .wizard-navigators > li.active.stepped > a, .wizard-navigators > li.active > a:hover"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".wizard-navigators > li.stepped > a"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".wizard-navigators > li > a:hover"/>
+                            </states>
+                        </wizardNavigationItem>
+                        <wizardNavigationItemProgressbar
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Progress Bar"
+                            cssSelector=".wizard-navigators > li .progress"
+                            id="af_wizardnavitemprogressbar"
+                            longTitle="Wizard Navigation Item Progress Bar"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".wizard-navigators > li.active .progress, .wizard-navigators > li.active.stepped .progress, .wizard-navigators > li.active:hover .progress"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".wizard-navigators > li.stepped .progress"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".wizard-navigators > li:hover .progress"/>
+                            </states>
+                        </wizardNavigationItemProgressbar>
+                        <wizardNavigationItemProgressIndicator
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Progress Indicator"
+                            cssSelector=".wizard-navigators > li .indicator"
+                            id="af_wizardnavitemprogressindicator"
+                            longTitle="Wizard Navigation Item Progress Indicator"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <active
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Active"
+                                    cssSelector=".wizard-navigators > li.active .indicator, .wizard-navigators > li.active.stepped .indicator, .wizard-navigators > li.active:hover .indicator"/>
+                                <stepped
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Visited"
+                                    cssSelector=".wizard-navigators > li.stepped .indicator"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".wizard-navigators > li:hover .indicator"/>
+                            </states>
+                        </wizardNavigationItemProgressIndicator>
+                    </items>
+                </wizardPanelNavigationGroup>
+                <wizardPanelDescription
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Description"
+                    cssSelector=".guideWizardDescription.guidePanelDescription"
+                    id="af_wizarddescription"
+                    longTitle="Wizard Panel Description"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+                <contentArea
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Area"
+                    cssSelector=".afWizardPanel"
+                    id="af_wizardcontentarea"
+                    longTitle="Wizard Content Area"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+                <wizardPanelScrollers
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Scrollers">
+                    <items jcr:primaryType="nt:unstructured">
+                        <toolbarNextScroll
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Toolbar Next Scroll"
+                            cssSelector=".guide-tab-scroller.guide-tab-scroller-next"
+                            id="af_wizardtoolbarnextscroll"
+                            longTitle="Wizard Toolbar Next Scroll"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guide-tab-scroller.guide-tab-scroller-next:hover"/>
+                            </states>
+                        </toolbarNextScroll>
+                        <toolbarPreviousScroll
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Toolbar Previous Scroll"
+                            cssSelector=".guide-tab-scroller.guide-tab-scroller-previous"
+                            id="af_wizardtoolbarprevscroll"
+                            longTitle="Wizard Toolbar Previous Scroll"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guide-tab-scroller.guide-tab-scroller-previous:hover"/>
+                            </states>
+                        </toolbarPreviousScroll>
+                        <panelNextScroll
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Panel Next Scroll"
+                            cssSelector=".wizard-nav-arrow.wizard-nav-next"
+                            id="af_wizardpanelnextscroll"
+                            longTitle="Wizard Panel Next Scroll"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".wizard-nav-arrow.wizard-nav-next:hover"/>
+                            </states>
+                        </panelNextScroll>
+                        <panelPreviousScroll
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Panel Previous Scroll"
+                            cssSelector=".wizard-nav-arrow.wizard-nav-prev"
+                            id="af_wizardpanelprevscroll"
+                            longTitle="Wizard Panel Previous Scroll"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".wizard-nav-arrow.wizard-nav-prev:hover"/>
+                            </states>
+                        </panelPreviousScroll>
+                    </items>
+                </wizardPanelScrollers>
+            </items>
+        </wizardPanel>
+        <panelHelpIcon
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Panel Help Icon"
+            cssSelector=".guidePanelDescription > .guideHelpQuestionMark"
+            id="af_panelhelpicon"
+            longTitle="Panel Help Icon"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+            secondarySelectors="af_guideContainer:af_helpicon">
+            <states jcr:primaryType="nt:unstructured">
+                <hover
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Hover"
+                    cssSelector=".guidePanelDescription > .guideHelpQuestionMark:hover"/>
+            </states>
+        </panelHelpIcon>
+        <panelHelp
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Panel Help"
+            cssSelector=".guidePanelDescription.long"
+            id="af_panelhelp"
+            longTitle="Panel Help"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"/>
+    </items>
+</jcr:root>

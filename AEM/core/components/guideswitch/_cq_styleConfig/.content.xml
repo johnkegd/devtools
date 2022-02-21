@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideSwitch">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_switch"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Switch"
+                    cssSelector=".guideSwitch .ui-switchbutton-default"
+                    id="af_switchwidgetandtext"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideCheckBoxGroupItems.guideSwitch', options)"
+                    longTitle="Switch Widget"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common"
+                    secondarySelectors="af_guideContainer:af_widgetAndText">
+                    <items jcr:primaryType="nt:unstructured">
+                        <handle
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Handle"
+                            cssSelector=".guideSwitch .ui-switchbutton-default .ui-switchbutton-handle"
+                            id="af_switchhandle"
+                            longTitle="Switch Handle"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideActiveField .guideSwitch .ui-switchbutton-default .ui-switchbutton-handle"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideSwitch .ui-switchbutton-default .ui-switchbutton-handle"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideSwitch .ui-switchbutton-default .ui-switchbutton-handle:hover"/>
+                                <checked
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Selected"
+                                    cssSelector=".guideSwitch .ui-state-active.ui-switchbutton-default .ui-switchbutton-handle"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideSwitch .ui-switchbutton-default .ui-switchbutton-handle"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideSwitch .ui-switchbutton-default .ui-switchbutton-handle"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideSwitch .ui-switchbutton-default .ui-switchbutton-handle"/>
+                            </states>
+                        </handle>
+                        <switchOnLabel
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="On Label"
+                            cssSelector=".guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled"
+                            id="af_switchonlabel"
+                            longTitle="Switch On Label"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideActiveField .guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled:hover"/>
+                                <checked
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Selected"
+                                    cssSelector=".guideSwitch .ui-state-active.ui-switchbutton-default label.ui-switchbutton-enabled"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideSwitch .ui-switchbutton-default label.ui-switchbutton-enabled"/>
+                            </states>
+                        </switchOnLabel>
+                        <switchOffLabel
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Off Label"
+                            cssSelector=".guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled"
+                            id="af_switchofflabel"
+                            longTitle="Switch Off Label"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideActiveField .guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled:hover"/>
+                                <checked
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Selected"
+                                    cssSelector=".guideSwitch .ui-state-active.ui-switchbutton-default label.ui-switchbutton-disabled"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideSwitch .ui-switchbutton-default label.ui-switchbutton-disabled"/>
+                            </states>
+                        </switchOffLabel>
+                    </items>
+                    <states jcr:primaryType="nt:unstructured">
+                        <checked
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Checked"
+                            cssSelector=".guideSwitch .ui-switchbutton-default.ui-state-active"/>
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Focus"
+                            cssSelector=".guideSwitch .ui-switchbutton:focus"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] .guideSwitch .ui-switchbutton"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".guideSwitch .ui-switchbutton:hover"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .guideSwitch .ui-switchbutton"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .guideSwitch .ui-switchbutton"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .guideSwitch .ui-switchbutton"/>
+                    </states>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

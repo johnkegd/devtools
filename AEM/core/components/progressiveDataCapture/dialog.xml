@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basic
+                jcr:primaryType="cq:Panel"
+                border="false"
+                title="Title and text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        path="/libs/fd/af/components/guidefield/dialog/items/title/items/name.infinity.json"
+                        xtype="cqinclude"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Title"
+                        name="./jcr:title"
+                        xtype="textfield"/>
+                    <guideProgressiveLayout
+                        jcr:primaryType="cq:Widget"
+                        autoHeight="{Boolean}true"
+                        defaultValue="/libs/fd/af/layouts/progressive/navigable/layout.html"
+                        disabled="false"
+                        fieldDescription="Select Layout for Adaptive Form View"
+                        fieldLabel="Progressive Layout"
+                        grow="false"
+                        hideLabel="false"
+                        name="./layout"
+                        options="/libs/fd/af/components/info.json?type=progressiveLayout"
+                        readOnly="false"
+                        type="select"
+                        xtype="selection"/>
+                </items>
+            </basic>
+            <configuration
+                jcr:primaryType="cq:Panel"
+                border="false"
+                title="Configuration">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <guideRef
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldDescription="Select Adaptive Form for Adaptive Form View"
+                        fieldLabel="Adaptive Form Path"
+                        hideLabel="false"
+                        name="./guideRef"
+                        rootPath="/content/dam/formsanddocuments"
+                        showTitlesInTree="false"
+                        xtype="pathfield"/>
+                    <enableAutoSave
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Enable Auto Save"
+                        name="./enableAutoSave"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <guideStrategy
+                        jcr:primaryType="cq:Widget"
+                        disabled="false"
+                        fieldDescription="Select Strategy for Adaptive Form View"
+                        fieldLabel="Adaptive Form View Strategy"
+                        name="./guideStrategyPath"
+                        xtype="guideprogressivestrategyselection"/>
+                    <progressiveStrategyActionSet
+                        jcr:primaryType="cq:Widget"
+                        autoWidth="{Boolean}true"
+                        collapsible="false"
+                        componentId="guide_progressive_strategy_config_panel"
+                        name="./guideProgressiveStrategyConfigSet"
+                        title="Strategy Configuration"
+                        xtype="dialogfieldset"/>
+                    <strategyName
+                        jcr:primaryType="nt:unstructured"
+                        hidden="{Boolean}true"
+                        name="./strategyName"
+                        xtype="textfield"/>
+                </items>
+            </configuration>
+            <styling
+                jcr:primaryType="cq:Panel"
+                border="false"
+                title="Styling">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <width
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="In pixels"
+                        fieldLabel="Width"
+                        name="./width"
+                        xtype="numberfield"/>
+                    <height
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="In pixels"
+                        fieldLabel="Height"
+                        name="./height"
+                        xtype="numberfield"/>
+                    <css
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="CSS class"
+                        name="./css"
+                        xtype="textfield"/>
+                    <theme
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Comma separated CQ client library categories"
+                        fieldLabel="Client Library"
+                        name="./theme"
+                        xtype="textfield"/>
+                </items>
+            </styling>
+        </items>
+    </items>
+</jcr:root>

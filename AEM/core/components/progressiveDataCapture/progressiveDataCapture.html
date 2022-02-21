@@ -1,0 +1,67 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ -
+ ~ ADOBE CONFIDENTIAL
+ ~ __________________
+ ~
+ ~  Copyright 2014 Adobe Systems Incorporated
+ ~  All Rights Reserved.
+ ~
+ ~ NOTICE:  All information contained herein is, and remains
+ ~ the property of Adobe Systems Incorporated and its suppliers,
+ ~ if any.  The intellectual and technical concepts contained
+ ~ herein are proprietary to Adobe Systems Incorporated and its
+ ~ suppliers and may be covered by U.S. and Foreign Patents,
+ ~ patents in process, and are protected by trade secret or copyright law.
+ ~ Dissemination of this information or reproduction of this material
+ ~ is strictly forbidden unless prior written permission is obtained
+ ~ from Adobe Systems Incorporated.
+
+ //TODO Localization
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<!--/*~~ Need to sync client libs include and script with guide container.jsp ~~*/-->
+<div data-sly-use.pdc="com.adobe.aemds.guide.progressive.GuideProgressiveDataCapture" data-sly-unwrap>
+ <div data-sly-test="${wcmmode.edit || pdc.allSectionsJson}" data-sly-unwrap>
+    <div class="pdc ${properties.name} ${properties.css}"
+         style="width: ${pdc.width  @context='styleToken'}px; height: ${pdc.height  @context='styleToken'}px;"
+         data-guide-progressive-path="${resource.path}" data-guide-progressive-allsections-info="${pdc.allSectionsJson}" data-enable-auto-save="${pdc.enableAutoSave @context='text'}">
+        <div data-sly-test="${pdc.enableAutoSave && pdc.guideContainer.autoSaveStrategyFilePath}" data-sly-resource="${@ path=pdc.guideContainer.path, resourceType=pdc.guideContainer.autoSaveStrategyFilePath, selectors='init'}" data-sly-unwrap/>
+        <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+            <css data-sly-call="${clientLib.css @ categories=['guide.progressive']}" data-sly-unwrap/>
+            <div data-sly-test="${wcmmode.edit}" data-sly-unwrap>
+                <all data-sly-call="${clientLib.all @ categories=['guide.progressive.authoring']}" data-sly-unwrap/>
+            </div>
+        </div>
+        <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+            <div data-sly-test="${!wcmmode.edit}" data-sly-unwrap>
+                <div data-sly-resource="${pdc.guideContainer.path @ selectors='guideIntegration'}" data-sly-unwrap/>
+                <js data-sly-call="${clientLib.js @ categories=[pdc.afLocale]}" data-sly-unwrap/>
+                <js data-sly-test="${pdc.guideContainer.clientLibRef}" data-sly-call="${clientLib.js @ categories=[pdc.guideContainer.clientLibRef]}" data-sly-unwrap/>
+                <js data-sly-test="${!pdc.guideContainer.xdpRef}" data-sly-call="${clientLib.js @ categories=['guideRuntime']}" data-sly-unwrap/>
+                <js data-sly-test="${pdc.guideContainer.xdpRef}" data-sly-call="${clientLib.js @ categories=['guideRuntimeWithXFA']}" data-sly-unwrap/>
+                <all data-sly-call="${clientLib.all @ categories=['af.customwidgets']}" data-sly-unwrap/>
+                <js data-sly-call="${clientLib.js @ categories=['guide.progressive']}" data-sly-unwrap/>
+            </div>
+        </div>
+        <div class="guideContainerWrapperNode ${pdc.guideContainer.nodeClass}"
+             data-path="${pdc.guideContainer.path}"
+             data-guide-test-data="${pdc.progressiveGuideInitializationState}"
+             data-tmproot="${pdc.tmpRoot}">
+            <div data-sly-test="${properties.layout}" data-sly-include="${properties.layout}" data-sly-unwrap></div>
+        </div>
+        <div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+            <link data-sly-test="${pdc.guideContainer.cssFileRef}" rel="stylesheet" href="${pdc.guideContainer.cssFileRef @ context='uri'}" type="text/css"/>
+        	<css data-sly-test="${properties.theme}" data-sly-call="${clientLib.css @ categories=[properties.theme]}" data-sly-unwrap/>
+        </div>
+        <div data-sly-test="${!wcmmode.edit}" data-sly-unwrap>
+        	<div data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+        		<js data-sly-test="${properties.theme}" data-sly-call="${clientLib.js @ categories=[properties.theme]}" data-sly-unwrap/>
+            </div>
+            <script type="text/javascript">
+                window.guideBridge.registerConfig("contextPath", "${request.contextPath @ context='scriptString'}");
+                window.guidelib.model.fireOnContainerDomElementReady(${pdc.guideContainer.guideInitializationState @ context="unsafe"});
+                window.guideBridge._readRuntimeLocale("${pdc.afRuntimeLocale}");
+            </script>
+        </div>
+    </div>
+ </div>
+</div>

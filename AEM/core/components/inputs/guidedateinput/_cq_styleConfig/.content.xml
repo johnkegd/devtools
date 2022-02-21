@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="guideDateInputField">
+    <items jcr:primaryType="nt:unstructured">
+        <field
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Field"
+            id="af_dateinput"
+            longTitle="Field"
+            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+            <items jcr:primaryType="nt:unstructured">
+                <widgetAndText
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Date Input Group"
+                    cssSelector=".guideFieldWidget.guideDateInputWidget"
+                    id="af_datewidgetandtext"
+                    jsonPostHandler="window.guidelib.touchlib.style.utils.widgetLabelPostHandler(' .guideFieldWidget.guideDateInputWidget', options)"
+                    longTitle="Date Input Widget"
+                    propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                    <items jcr:primaryType="nt:unstructured">
+                        <widgetLabel
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Label"
+                            cssSelector=".guideFieldWidget.guideDateInputWidget .comb-datefield label"
+                            id="af_datewidgetlabel"
+                            longTitle="Date Input Label"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideActiveField .guideFieldWidget.guideDateInputWidget .comb-datefield label"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideDateInputWidget .comb-datefield label"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure .guideFieldWidget.guideDateInputWidget .comb-datefield label"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector=".validation-success .guideFieldWidget.guideDateInputWidget .comb-datefield label"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'] .guideFieldWidget.guideDateInputWidget .comb-datefield label"/>
+                            </states>
+                        </widgetLabel>
+                        <dayInput
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Day Input"
+                            cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day"
+                            id="af_dayinput"
+                            longTitle="Day input"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day:focus"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day:hover"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure.guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector="validation-success.guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'].guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-day"/>
+                            </states>
+                        </dayInput>
+                        <monthInput
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Month Input"
+                            cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month"
+                            id="af_monthinput"
+                            longTitle="Month Input"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month:focus"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month:hover"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure.guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector="validation-success.guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'].guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-month"/>
+                            </states>
+                        </monthInput>
+                        <yearInput
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Year Input"
+                            cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year"
+                            id="af_yearinput"
+                            longTitle="Year Input"
+                            propertySheet="/mnt/overlay/fd/af/components/stylePropertySheet/common">
+                            <states jcr:primaryType="nt:unstructured">
+                                <focus
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Focus"
+                                    cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year:focus"/>
+                                <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Disabled"
+                                    cssSelector="\[data-disabled='true'] .guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year"/>
+                                <hover
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Hover"
+                                    cssSelector=".guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year:hover"/>
+                                <error
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Error"
+                                    cssSelector=".validation-failure.guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year"/>
+                                <success
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Success"
+                                    cssSelector="validation-success.guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year"/>
+                                <mandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mandatory"
+                                    cssSelector="\[data-mandatory='true'].guideFieldWidget.guideDateInputWidget input[type='text'].comb-form-group-year"/>
+                            </states>
+                        </yearInput>
+                    </items>
+                    <states jcr:primaryType="nt:unstructured">
+                        <focus
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideResource="true"/>
+                        <disabled
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Disabled"
+                            cssSelector="\[data-disabled='true'] .guideFieldWidget.guideDateInputWidget"/>
+                        <hover
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Hover"
+                            cssSelector=".guideFieldWidget.guideDateInputWidget:hover"/>
+                        <error
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Error"
+                            cssSelector=".validation-failure .guideFieldWidget.guideDateInputWidget"/>
+                        <success
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Success"
+                            cssSelector=".validation-success .guideFieldWidget.guideDateInputWidget"/>
+                        <mandatory
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mandatory"
+                            cssSelector="\[data-mandatory='true'] .guideFieldWidget.guideDateInputWidget"/>
+                    </states>
+                </widgetAndText>
+            </items>
+        </field>
+    </items>
+</jcr:root>

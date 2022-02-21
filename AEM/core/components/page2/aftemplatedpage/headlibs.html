@@ -1,0 +1,26 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ ADOBE CONFIDENTIAL
+~ ___________________
+~ Copyright 2015 Adobe Systems Incorporated
+~ All Rights Reserved.
+~
+~ NOTICE:  All information contained herein is, and remains
+~ the property of Adobe Systems Incorporated and its suppliers,
+~ if any.  The intellectual and technical concepts contained
+~ herein are proprietary to Adobe Systems Incorporated and its
+~ suppliers and are protected by all applicable intellectual property
+~ laws, including trade secret and copyright laws.
+~ Dissemination of this information or reproduction of this material
+~ is strictly forbidden unless prior written permission is obtained
+~ from Adobe Systems Incorporated.
+*/-->
+<!-- This file has been overridden from page, since page was bringing some extra clientlibs (foundation,granite).
+    This will need to be updated with /libs/wcm/foundation/components/page/head.html, for any infrastructural changes.
+ -->
+<template data-sly-template.headlibs="${@ designPath}"
+          data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"
+          data-sly-use.head="${'headlibs.js' @ designPath=designPath}">
+    <sly data-sly-call="${clientLib.css @ categories=['guide.core.common']}" />
+    <link data-sly-test="${head.staticDesign}" href="${head.staticDesign}" rel="stylesheet" type="text/css" />
+    <link data-sly-test="${head.design}" href="${head.design}" rel="stylesheet" type="text/css" />
+</template>

@@ -1,0 +1,164 @@
+/*
+ * ***********************************************************************
+ * ADOBE CONFIDENTIAL
+ * __________________
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ * ***********************************************************************
+ */
+
+.firstSignerTable {
+    z-index: 1;
+    .signerDragButton,
+    .signerDeleteButton {
+        visibility: hidden;
+    }
+    th:first-child {
+        text-align: left;
+    }
+}
+
+.signerTable {
+    margin-top: -37px;
+}
+
+.firstSignerTable td,
+.signerTable td {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.signerName {
+    text-overflow: ellipsis;
+}
+
+.js-SidePanel-content--signer {
+    margin: 4rem 0 2rem 2rem;
+    height: 92%;
+    overflow: auto;
+    padding-right: 2rem;
+}
+
+.sidepanel-content .sidepanel-tab-title.signerSidePanelTitle {
+    top: 0.5rem;
+    left: 0;
+    padding-left: 2rem;
+    z-index: 100;
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    padding-right: 5.5rem;
+    text-overflow: ellipsis;
+}
+
+.signerSidePanelCancel,
+.signerSidePanelSubmit {
+    position: absolute;
+    top: 0.3rem;
+    z-index: 150;
+}
+
+.signerSidePanelCancel {
+    right: 4.5rem;
+}
+
+.signerSidePanelSubmit {
+    right: 1.5rem;
+}
+
+.signer,
+.signField,
+.deleteField,
+[name="signerNumber"],
+.hiddenSignerField,
+.hiddenSignerFieldLabel label,
+.adobeSignHide {
+    display: none !important;
+}
+
+.firstSignerTable coral-table-headercell-content {
+    color: #707070 !important;
+    font-weight: normal !important;
+    padding-left: 0px !important;
+}
+
+.hideSignFields .adobeSignFieldAutocomplete {
+    display: none;
+}
+
+.signFieldAutocomplete .coral-InputGroup {
+    display: none;
+}
+
+.signerAfField .coral-InputGroup {
+    display: none;
+}
+.signerAfFieldAutocomplete.hideSignerAfField{
+    display: none;
+}
+.signerAfField coral-tag-label {
+    max-width: 100px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.signatureConfiguration.hideAddDeleteButton .signerDeleteButton,
+.signatureConfiguration.hideAddDeleteButton .signerAddButton,
+.signerDragButton.disableDragButton{
+    visibility: hidden;
+}
+.signDisabled {
+    .signConfigPath,
+    .workflowType,
+    .firstSignerTable,
+    .signerTable,
+    .signerAddButton {
+        display: none;
+    }
+}
+
+tr.signerError {
+    border: .0625rem solid #e14132;
+    border-collapse: inherit;
+    color: #e14132;
+    [signer-error-icon] {
+        position: absolute;
+        right: 0;
+        color: #e14132;
+    }
+    .signerName {
+        color: #e14132;
+    }
+}
+
+//workaround for coral issue CUI-6630
+.firstSignerTable {
+    table {
+        background-color: #fff;
+    }
+    td:first-child,
+    td:last-child {
+        display: none;
+    }
+    td:nth-child(2){
+        padding-left: 38px;
+    }
+    td:nth-child(3){
+        position: absolute;
+        right: 16%;
+    }
+}
