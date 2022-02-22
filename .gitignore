@@ -10,4 +10,5 @@
 /aem/testTool
 /aem/coreComponents
 /utils/helpers/java/alfred-helpers/filesOutput
-alfred/workflows/alfred-font-awesome-workflow
+/utils/helpers/java/alfred-helpers/target
+/utils/helpers/java/alfred-helpers/target

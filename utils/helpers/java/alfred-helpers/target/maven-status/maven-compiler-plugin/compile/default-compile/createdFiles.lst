@@ -1,6 +1,0 @@
-com/alfred/workflow/scripts/model/Url.class
-com/alfred/workflow/scripts/service/UrlService.class
-com/alfred/workflow/scripts/TextHandlerActivator.class
-com/alfred/workflow/scripts/App.class
-com/alfred/workflow/scripts/service/TextHandler.class
-com/alfred/workflow/scripts/service/OutputContainer.class
