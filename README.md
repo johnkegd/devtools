@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/johnkegd">
-    <img src="https://media.giphy.com/media/Uw2O9Vw5kYKIihfZ6w/giphy.gif" alt="Jon Garcia logo">
+    <img src="https://media.giphy.com/media/Uw2O9Vw5kYKIihfZ6w/giphy.gif" alt="Jon Garcia logo" width="400px">
   </a>
 
   <h1 align="center">Devtools and Training</h1>
