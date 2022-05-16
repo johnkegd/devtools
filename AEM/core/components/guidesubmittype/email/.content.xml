@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="Send email"
-    jcr:primaryType="sling:Folder"
-    sling:resourceType="fd/af/components/guidesubmittype/email"
-    guideComponentType="fd/af/components/guidesubmittype"
-    guideDataModel="basic,xfa,xsd"
-    submitService="Email"/>

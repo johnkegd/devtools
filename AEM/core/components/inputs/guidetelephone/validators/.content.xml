@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:mixinTypes="[granite:FinalArea]"
-    jcr:primaryType="nt:unstructured"
-    guideComponentType="fd/af/components/validator/guideTelephone"
-    pattern1="International=^[+][0-9]{0,14}$"
-    pattern2="US Phone Number=^[+]1[0-9]{0,10}$"
-    pattern3="UK Phone Number=^[+]44[0-9]{0,10}$"/>

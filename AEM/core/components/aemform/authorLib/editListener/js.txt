@@ -1,3 +1,0 @@
-#base=javascript
-EditListeners.js
-PreviewHook.js

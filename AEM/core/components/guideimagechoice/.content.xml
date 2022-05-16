@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    cq:icon="imageCheck"
-    jcr:description="Add images for users to select one or more image options."
-    jcr:primaryType="cq:Component"
-    jcr:title="Image Choice"
-    sling:resourceSuperType="fd/af/components/guidecheckbox"
-    allowedParents="[*/parsys,*/*layout]"
-    componentGroup="Adaptive Form"/>
