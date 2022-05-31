@@ -4,3 +4,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = git@github.com:johnkegd/snippets.git
+[submodule "transfer.sh"]
+	path = transfer.sh
+	url = git@github.com:johnkegd/transfer.sh.git
