@@ -1,11 +1,10 @@
 .idea
 .DS_Store
-*.zip
-*.jar
 *.vscode
+/utils/vlt/bin
+/utils/vlt/lib
 /ItermLogs
 /mac/workflows/iterm2_workspace
-/vlt
 /aem/formsandoc
 /aem/testTool
 /aem/coreComponents
